@@ -8,6 +8,8 @@ Contact Info. <ever.livin.never.fearful@gmail.com>
 
 Published under the GPLv3 license.
 
+[Introduction video playlist](http://www.youtube.com/playlist?list=PLhYuGjlMiCxi4KmRhJcR2NsoLU_c3nHh6)
+
 ---
 
 ##Requirements
