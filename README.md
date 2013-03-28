@@ -10,6 +10,7 @@ Published under the GPLv3 license.
 ---
 
 ##Requirements
+
 - MySQL with InnoDB storage engine.
     - MyISAM could possibly work but does not support transactions and could corrupt the database.
 
@@ -62,6 +63,7 @@ Published under the GPLv3 license.
     - Backup the existing templates
     - Customize your template.
     - You can use the Twitter Bootsrap CSS classes or not.
+
 ---
 
 ##Changelog
