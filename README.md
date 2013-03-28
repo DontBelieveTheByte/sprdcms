@@ -1,4 +1,5 @@
-#A content management for SpreadShirt
+#SprdCMS
+
 Content management for your [Spreadshirt](http://www.spreadshirt.com/) shop.
 
 Copyright (c) J-F B 2013
