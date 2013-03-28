@@ -1,0 +1,289 @@
+body {
+    color: #fff;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    font-variant: normal!important;
+    margin-top: 8px
+}
+body a, a:visited{
+    text-decoration: none;
+    color : #37B;
+}
+label {
+    color : #37B;
+    font-size: xx-small;
+}
+#adminPannel {
+    background-color: #fff;
+    border : 3px solid;
+    border-color: #ccc;
+    padding: 1em 1em .5em 1em;
+    margin: .2em 0em 0em .2em;
+    width: 340px;
+    float : left;
+    border-radius: 8px;
+    color: #37B;
+}
+#categoriesCloud {
+    float : right;
+    clear :both;
+    width:100%;
+    margin-bottom: 1em;
+    text-align: left;
+}
+#container{
+    border : 3px solid;
+    border-color: #cccccc;
+    float : left;
+    width: 99%;
+    min-width: 1000px;
+    border-radius: 8px;
+    background-color: #37B;
+}
+#container h1,h2 {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: x-large;
+    color: #37B;
+    margin : 1em 0em .5em .2em;
+}
+#CSVForm {
+    display: none;
+}
+#domainHelper{
+    display: inline;
+    color: #37B;
+    margin-left: 1em;
+}
+#donate {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#initContainer{
+    border : 3px solid;
+    border-color: #cccccc;
+    float : left;
+    margin : .2em;
+    border-radius: 8px;
+    background-color: #37B;
+    padding: .5em 1em 1em 1em;
+    width : 1300px;
+}
+#initContainer h1,h2{
+    font-size: xx-large;
+    margin-top: .5em;
+}
+#initContainer input{
+    margin: 0em .5em .5em .5em;
+}
+#listShirts{
+    float: right;
+    /*Firefox*/
+    width: -moz-calc(100% - 390px);
+    /*WebKit*/
+    width: -webkit-calc(100% - 390px);
+    /*Opera*/
+    width: -o-calc(100% - 390px);
+    /*Standard*/
+    width: calc(100% - 390px);
+}
+#login {
+    text-align: center;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+}
+#login .inputfield{
+    margin: .1em 1em .5em 1em;
+}
+#logsTable tr{
+    font-size :small;
+}
+#logsTable tr:hover{
+    background-color: #37B;
+    color : white;
+}
+#mainCat {
+    clear: both;
+    width:100%;
+}
+#match{
+    float :right;
+}
+#radio {
+    margin: .5em;
+}
+#verify {
+    text-align: center
+}
+#progressBar {
+    float : left;
+    width : 200px;
+}
+#logout{
+    width : 100%;
+    clear : both;
+    float : left;
+    text-align: left;
+    padding-left: .2em;
+}
+.adminPannelForm{
+    width: 100%;
+    height: 100%;
+    clear: both;
+}
+.ui-tabs, .ui-tabs-nav {
+    padding: .1em .2em .1em .2em;
+}
+.catlist {
+    margin-top: .4em;
+    clear: both;
+    cursor:pointer;
+    width: 100%;
+}
+#currentCategory:hover, #logout:hover, .catlist:hover, [class^="icon-"]:hover {
+    font-weight: bold;
+    text-shadow: -1px 0 #ccc, 0 2px #ccc, 2px 0 #ccc, 0 -1px #ccc;
+}
+.cmslogo {
+    float: left;
+    clear: right;
+    margin: 45px 0 50px 40px;
+    width: 25%;
+    height: 25%;
+}
+.currentCategory {
+    color : #37B;
+    font-size: xx-large;
+    margin: 2em 1em 2em 0.5em;
+}
+.initList {
+    color : #fff;
+    margin-left: 2em;
+    margin-bottom: 3em;
+    margin-top :3em;
+}
+.error{
+    font-size: 1em;
+}
+.grab {
+    cursor :move;
+}
+.helperTxt {
+    clear: right;
+}
+.iconSeperator{
+    margin-left: .2em;
+    margin-right: .2em;
+    cursor:pointer;
+}
+.inputfield {
+    background-color: #fff;
+    border: medium solid #ccc;
+    color: #37B;
+    font-family: verdana;
+    /*margin-left: 12px;*/
+    /*margin-right: 20px;*/
+    /*margin-bottom: 15px;*/
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 0.4em;
+}
+.inputfield:focus{
+    border : medium solid #37B;
+    outline: none;
+}
+.loader {
+    background-image: url('../loading.gif');
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: none;
+}
+.logTime{
+    width: 200px;
+}
+.messagespan{
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+.notActive {
+    background: #ccc;
+    opacity: .5;
+}
+.regform {
+    border : 3px solid;
+    border-color: #ccc;
+    float:left;
+    width: 850px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: .5em .5em .5em 1em;
+}
+.removeShirt {
+    margin-top: 4px;
+    float: left;
+    clear :right;
+}
+.shirt {
+    border-radius: 5px;
+    font-family: verdana, arial, helvetica, sans-serif;
+    width : 220px;
+    float : left;
+    padding : 0em .2em .3em .2em;
+    margin : .2em;
+    background-color: #fff;
+    cursor: move;
+    color: #37B;
+}
+.shirtCtrl {
+    padding: .2em .4em .1em .4em;
+}
+.shirt img {
+    cursor : default;
+    display: block;
+    margin-left:  auto;
+    margin-right: auto;
+    margin-bottom: .3em;
+    border-radius: .2em;
+    width: 100%;
+}
+.shirtName {
+    font-family: Tahoma, Geneva, sans-serif;
+    /*font-weight: bold;*/
+    font-size: 24px;
+    height : 90px;
+    clear :right;
+    margin: auto;
+}
+.shirtInStore {
+    background-color: orange;
+}
+.shirtRow {
+    padding: 1em;
+    text-align: center;
+}
+.shirtRow:hover {
+    background-color: #37B;
+    color : white;
+}
+.toTheRight{
+    float : right;
+    margin-bottom: 1em;
+}
+.ui-state-default {
+    font-weight: normal;
+}
+.ui-button-text-only .ui-button-text{
+    padding: 8px 8px 8px 8px;
+}
+.validateError{
+    clear:both;
+}

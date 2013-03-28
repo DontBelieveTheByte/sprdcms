@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class SprdCMSRequest | SprdCMS Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?394153670"></script>
+	<script type="text/javascript" src="elementlist.js?1023897709"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li class="active main"><a href="package-SprdCMS.html">SprdCMS</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-SprdCMSAjaxController.html">SprdCMSAjaxController</a></li>
+				<li><a href="class-SprdCMSBackStore.html">SprdCMSBackStore</a></li>
+				<li><a href="class-SprdCMSCache.html">SprdCMSCache</a></li>
+				<li><a href="class-SprdCMSCommandMapper.html">SprdCMSCommandMapper</a></li>
+				<li><a href="class-SprdCMSDb.html">SprdCMSDb</a></li>
+				<li><a href="class-SprdCMSDbBackup.html">SprdCMSDbBackup</a></li>
+				<li><a href="class-SprdCMSFrontController.html">SprdCMSFrontController</a></li>
+				<li><a href="class-SprdCMSInstall.html">SprdCMSInstall</a></li>
+				<li><a href="class-SprdCMSItem.html">SprdCMSItem</a></li>
+				<li><a href="class-SprdCMSItemCSV.html">SprdCMSItemCSV</a></li>
+				<li><a href="class-SprdCMSItemManual.html">SprdCMSItemManual</a></li>
+				<li><a href="class-SprdCMSLogger.html">SprdCMSLogger</a></li>
+				<li class="active"><a href="class-SprdCMSRequest.html">SprdCMSRequest</a></li>
+				<li><a href="class-SprdCMSRewrite.html">SprdCMSRewrite</a></li>
+				<li><a href="class-SprdCMSSession.html">SprdCMSSession</a></li>
+				<li><a href="class-SprdCMSSiteConfig.html">SprdCMSSiteConfig</a></li>
+				<li><a href="class-SprdCMSStore.html">SprdCMSStore</a></li>
+				<li><a href="class-SprdCMSStoreFront.html">SprdCMSStoreFront</a></li>
+				<li><a href="class-SprdCMSViewControl.html">SprdCMSViewControl</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-SprdCMSProcessor.html">SprdCMSProcessor</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-SprdCMS.html" title="Summary of SprdCMS"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="sprdcms-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+			</li>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class SprdCMSRequest</h1>
+
+
+	<div class="description">
+	
+<p>Helper class for the front controller is used to decompose request parameters
+and transform it into a command with parameters.</p>
+
+<p>Helper class for the front controller is used to decompose request parameters
+and transform it into a command with parameters. The $_GET superglobal is
+evaluated and exploded into an array. If nothing is passed by $_GET a default
+command is usually written.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-SprdCMS.html">SprdCMS</a><br />
+
+				<b>Copyright:</b>
+				(c) 2013, J-F B<br />
+				<b>License:</b>
+				<a href="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</a><br />
+				<b>Author:</b>
+				J-F B &lt;<a
+href="mailto:ever.livin.never.fearful&#64;gmail.com">ever.livin.never.fearful&#64;<!---->gmail.com</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-SprdCMSRequest.html#9-65" title="Go to source code">cms/includes/lib/request.inc</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-SprdCMSRequest.html#25-32" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+<p>The constructor simply calls a private function to extract the command and
+parameters.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>The constructor simply calls a private function to extract the command and
+parameters.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="extract" id="_extract">
+
+		<td class="attributes"><code>
+			 private 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_extract">#</a>
+		<code><a href="source-class-SprdCMSRequest.html#34-53" title="Go to source code">extract</a>( )</code>
+
+		<div class="description short">
+			
+<p>This method does several things to in order to extract a valid command from
+the $_GET superglobal. It starts by checking if clean URLs are enabled and if it
+this is the case, it will use $_SERVER['REDIRECT_QUERY_STRING'] as its input.
+Otherwise it uses the $_GET superglobal and uses a regular expression to explode
+the query string into an array. The is a special case for handling the testing
+of clean URLs capability. If nothing can be extracted from the previous cases,
+it will explicitely return NULL.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>This method does several things to in order to extract a valid command from
+the $_GET superglobal. It starts by checking if clean URLs are enabled and if it
+this is the case, it will use $_SERVER['REDIRECT_QUERY_STRING'] as its input.
+Otherwise it uses the $_GET superglobal and uses a regular expression to explode
+the query string into an array. The is a special case for handling the testing
+of clean URLs capability. If nothing can be extracted from the previous cases,
+it will explicitely return NULL.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getParams" id="_getParams">
+
+		<td class="attributes"><code>
+			 public 
+			array|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getParams">#</a>
+		<code><a href="source-class-SprdCMSRequest.html#55-63" title="Go to source code">getParams</a>( )</code>
+
+		<div class="description short">
+			
+<p>Getter for the parameters array.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Getter for the parameters array.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array|null</code><br>Method will return a numerically indexed array with the first index as the
+command and subsequent indexes as parameters for the command.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="params" id="$params">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSRequest.html#19-23" title="Go to source code"><var>$params</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$params" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>This numerically indexed array that will hold the command and list of
+parameters.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>This numerically indexed array that will hold the command and list of
+parameters.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		SprdCMS Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

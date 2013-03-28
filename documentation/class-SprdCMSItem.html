@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class SprdCMSItem | SprdCMS Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?394153670"></script>
+	<script type="text/javascript" src="elementlist.js?1023897709"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li class="active main"><a href="package-SprdCMS.html">SprdCMS</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-SprdCMSAjaxController.html">SprdCMSAjaxController</a></li>
+				<li><a href="class-SprdCMSBackStore.html">SprdCMSBackStore</a></li>
+				<li><a href="class-SprdCMSCache.html">SprdCMSCache</a></li>
+				<li><a href="class-SprdCMSCommandMapper.html">SprdCMSCommandMapper</a></li>
+				<li><a href="class-SprdCMSDb.html">SprdCMSDb</a></li>
+				<li><a href="class-SprdCMSDbBackup.html">SprdCMSDbBackup</a></li>
+				<li><a href="class-SprdCMSFrontController.html">SprdCMSFrontController</a></li>
+				<li><a href="class-SprdCMSInstall.html">SprdCMSInstall</a></li>
+				<li class="active"><a href="class-SprdCMSItem.html">SprdCMSItem</a></li>
+				<li><a href="class-SprdCMSItemCSV.html">SprdCMSItemCSV</a></li>
+				<li><a href="class-SprdCMSItemManual.html">SprdCMSItemManual</a></li>
+				<li><a href="class-SprdCMSLogger.html">SprdCMSLogger</a></li>
+				<li><a href="class-SprdCMSRequest.html">SprdCMSRequest</a></li>
+				<li><a href="class-SprdCMSRewrite.html">SprdCMSRewrite</a></li>
+				<li><a href="class-SprdCMSSession.html">SprdCMSSession</a></li>
+				<li><a href="class-SprdCMSSiteConfig.html">SprdCMSSiteConfig</a></li>
+				<li><a href="class-SprdCMSStore.html">SprdCMSStore</a></li>
+				<li><a href="class-SprdCMSStoreFront.html">SprdCMSStoreFront</a></li>
+				<li><a href="class-SprdCMSViewControl.html">SprdCMSViewControl</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-SprdCMSProcessor.html">SprdCMSProcessor</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-SprdCMS.html" title="Summary of SprdCMS"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="sprdcms-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+			</li>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class SprdCMSItem</h1>
+
+
+	<div class="description">
+	
+<p>This is base class that defines what properties a store items should hold and
+its common methods.</p>
+
+<p>This is base class that defines what properties a store items should hold and
+its common methods. Instantiation of object is deffered via static factory
+methods that will return the correct type of child class object.</p>
+
+	</div>
+
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-SprdCMSItemCSV.html">SprdCMSItemCSV</a>, 
+			<a href="class-SprdCMSItemManual.html">SprdCMSItemManual</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br />
+		
+		
+		<b>Package:</b> <a href="package-SprdCMS.html">SprdCMS</a><br />
+
+				<b>Copyright:</b>
+				(c) 2013, J-F B<br />
+				<b>License:</b>
+				<a href="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</a><br />
+				<b>Author:</b>
+				J-F B &lt;<a
+href="mailto:ever.livin.never.fearful&#64;gmail.com">ever.livin.never.fearful&#64;<!---->gmail.com</a>&gt;<br />
+				<b>See:</b>
+				<code><code><a href="class-SprdCMSItemCSV.html">SprdCMSItemCSV</a></code></code><br />
+				<b>See:</b>
+				<code><code><a href="class-SprdCMSItemManual.html">SprdCMSItemManual</a></code></code><br />
+		<b>Located at</b> <a href="source-class-SprdCMSItem.html#11-234" title="Go to source code">cms/includes/lib/item.inc</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-SprdCMSItem.html#87-93" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+<p>The constructor's role is simply to obtain a database instance a set the
+reference to the $sdb property.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>The constructor's role is simply to obtain a database instance a set the
+reference to the $sdb property.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="SprdCMSitemCSVFactory" id="_SprdCMSitemCSVFactory">
+
+		<td class="attributes"><code>
+			 public static
+			<code><a href="class-SprdCMSItemCSV.html">SprdCMSItemCSV</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_SprdCMSitemCSVFactory">#</a>
+		<code><a href="source-class-SprdCMSItem.html#95-105" title="Go to source code">SprdCMSitemCSVFactory</a>( <span>array <var>$item</var></span> )</code>
+
+		<div class="description short">
+			
+<p>This is a static factory method that should return an instance of
+SprdCMSItemCSV after calling its constructor.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>This is a static factory method that should return an instance of
+SprdCMSItemCSV after calling its constructor.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$item</var></dt>
+					<dd><code>array</code><br>$item Takes an associative array built from the CSV file, json encoded/decoded
+and passes it to the SprdCMSItemCSV constructor.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-SprdCMSItemCSV.html">SprdCMSItemCSV</a></code></code><br>Returns an instance of a valid SprdCMSItemCSV object.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-SprdCMSItemCSV.html">SprdCMSItemCSV</a></code></code><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="SprdCMSitemManualFactory" id="_SprdCMSitemManualFactory">
+
+		<td class="attributes"><code>
+			 public static
+			<code><a href="class-SprdCMSItemManual.html">SprdCMSItemManual</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_SprdCMSitemManualFactory">#</a>
+		<code><a href="source-class-SprdCMSItem.html#107-118" title="Go to source code">SprdCMSitemManualFactory</a>( <span>string <var>$item</var></span> )</code>
+
+		<div class="description short">
+			
+<p>This is a static factory method that should return a valid instance of
+SprdCMSitemManualFactory.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>This is a static factory method that should return a valid instance of
+SprdCMSitemManualFactory.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$item</var></dt>
+					<dd><code>string</code><br>$item Takes a string that represents a valid spreadshirt article.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-SprdCMSItemManual.html">SprdCMSItemManual</a></code></code><br>Returns an instance of a valid SprdCMSItemManual object.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-SprdCMSItemManual.html">SprdCMSItemManual</a></code></code><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getId" id="_getId">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getId">#</a>
+		<code><a href="source-class-SprdCMSItem.html#120-127" title="Go to source code">getId</a>( )</code>
+
+		<div class="description short">
+			
+<p>Getter for the current instance's unique article ID field.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Getter for the current instance's unique article ID field.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The unique ID of the article.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getProduct" id="_getProduct">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getProduct">#</a>
+		<code><a href="source-class-SprdCMSItem.html#129-136" title="Go to source code">getProduct</a>( )</code>
+
+		<div class="description short">
+			
+<p>Getter for the current instance's product ID. Several articles can refer to
+the same product ID.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Getter for the current instance's product ID. Several articles can refer to
+the same product ID.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The unique ID of the product.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getName" id="_getName">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getName">#</a>
+		<code><a href="source-class-SprdCMSItem.html#138-145" title="Go to source code">getName</a>( )</code>
+
+		<div class="description short">
+			
+<p>Getter for the current instance's article name property.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Getter for the current instance's article name property.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The human readable name of the articles beings sold. This can be null.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getImg0" id="_getImg0">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getImg0">#</a>
+		<code><a href="source-class-SprdCMSItem.html#147-154" title="Go to source code">getImg0</a>( )</code>
+
+		<div class="description short">
+			
+<p>Getter for the current instance's image with zoom on the design, the img0
+property.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Getter for the current instance's image with zoom on the design, the img0
+property.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The file name on disk of the zoom image.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getImg1" id="_getImg1">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getImg1">#</a>
+		<code><a href="source-class-SprdCMSItem.html#156-163" title="Go to source code">getImg1</a>( )</code>
+
+		<div class="description short">
+			
+<p>Getter for the current instance's image showing the product with the design,
+the img1 property.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Getter for the current instance's image showing the product with the design,
+the img1 property.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The file name on disk of the article's image.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPrice" id="_getPrice">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPrice">#</a>
+		<code><a href="source-class-SprdCMSItem.html#165-172" title="Go to source code">getPrice</a>( )</code>
+
+		<div class="description short">
+			
+<p>Getter for the current instance's price with two decimals.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Getter for the current instance's price with two decimals.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The current price of the articles as it was first imported.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDescription" id="_getDescription">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDescription">#</a>
+		<code><a href="source-class-SprdCMSItem.html#174-181" title="Go to source code">getDescription</a>( )</code>
+
+		<div class="description short">
+			
+<p>Getter for the current instance's description.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Getter for the current instance's description.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>A string of text representing a description.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getUrl" id="_getUrl">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getUrl">#</a>
+		<code><a href="source-class-SprdCMSItem.html#183-190" title="Go to source code">getUrl</a>( )</code>
+
+		<div class="description short">
+			
+<p>Getter for the current instance's URL at spreadshirt.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Getter for the current instance's URL at spreadshirt.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The URL of an article being sold at spreadshirt. This can be null in case of a
+fully integreted store with on site shopping cart.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getColor" id="_getColor">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getColor">#</a>
+		<code><a href="source-class-SprdCMSItem.html#192-200" title="Go to source code">getColor</a>( )</code>
+
+		<div class="description short">
+			
+<p>Getter for the current instance's color.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Getter for the current instance's color.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The human readable color.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="itemFreezeDb" id="_itemFreezeDb">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_itemFreezeDb">#</a>
+		<code><a href="source-class-SprdCMSItem.html#202-232" title="Go to source code">itemFreezeDb</a>( )</code>
+
+		<div class="description short">
+			
+<p>This method is in charge of saving a valid SprdCMSItem to the database. It
+gets all the instance's field to build an associative array that will be passed
+to the database has a prepared SQL statement.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>This method is in charge of saving a valid SprdCMSItem to the database. It
+gets all the instance's field to build an associative array that will be passed
+to the database has a prepared SQL statement.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>Returns TRUE on success of saving a new article or FALSE if there is a problem
+while doing so.<br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code>Exception</code><br>Exceptions are logged to the <code>logs</code> table using the central logging
+facility and method returns FALSE if an Exception is triggered.<br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="id" id="$id">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSItem.html#25-29" title="Go to source code"><var>$id</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$id" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The unique ID of the article we want to in our store as an article, this is
+obtained from spreadshirt.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The unique ID of the article we want to in our store as an article, this is
+obtained from spreadshirt.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="pid" id="$pid">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSItem.html#31-35" title="Go to source code"><var>$pid</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$pid" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The product ID of an article. Several articles can have the same product ID,
+this is obtained from spreadshirt.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The product ID of an article. Several articles can have the same product ID,
+this is obtained from spreadshirt.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="name" id="$name">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSItem.html#37-41" title="Go to source code"><var>$name</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$name" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The name of of an article. This normally has semantic meaning to humans.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The name of of an article. This normally has semantic meaning to humans.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="desc" id="$desc">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSItem.html#43-47" title="Go to source code"><var>$desc</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$desc" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Articles can have a short textual description. This description can be
+updated by the site administrator.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Articles can have a short textual description. This description can be
+updated by the site administrator.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="img0" id="$img0">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSItem.html#49-53" title="Go to source code"><var>$img0</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$img0" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Articles have two images mirrored on disk, this image is a zoom of the design
+being sold.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Articles have two images mirrored on disk, this image is a zoom of the design
+being sold.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="img1" id="$img1">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSItem.html#55-59" title="Go to source code"><var>$img1</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$img1" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Articles have two images mirrored on disk, this image shows the product with
+the included design.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Articles have two images mirrored on disk, this image shows the product with
+the included design.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="price" id="$price">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSItem.html#61-65" title="Go to source code"><var>$price</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$price" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>This normally holds the price of an item. It is set only once when the
+article is imported.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>This normally holds the price of an item. It is set only once when the
+article is imported.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="url" id="$url">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSItem.html#67-71" title="Go to source code"><var>$url</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$url" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Until the spreadshirt API is fully implement, we use an iframe to display a
+single article from spreadshirt. This is the actual URL of an article from
+spreadshirt.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Until the spreadshirt API is fully implement, we use an iframe to display a
+single article from spreadshirt. This is the actual URL of an article from
+spreadshirt.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="color" id="$color">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSItem.html#73-77" title="Go to source code"><var>$color</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$color" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The color of an article. Has semantic meaning to human but a hex value can be
+mapped later on.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The color of an article. Has semantic meaning to human but a hex value can be
+mapped later on.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="sdb" id="$sdb">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-SprdCMSDb.html">SprdCMSDb</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSItem.html#79-85" title="Go to source code"><var>$sdb</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$sdb" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Holds a reference to SprdCMSDb singleton isntance in order to make calls on
+the database.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Holds a reference to SprdCMSDb singleton isntance in order to make calls on
+the database.</p>
+
+
+					<h4>See</h4>
+					<div class="list">
+							<code><code><a href="class-SprdCMSDb.html">SprdCMSDb</a></code></code><br />
+					</div>
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		SprdCMS Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

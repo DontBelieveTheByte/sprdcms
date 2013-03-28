@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class SprdCMSSiteConfig | SprdCMS Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?394153670"></script>
+	<script type="text/javascript" src="elementlist.js?1023897709"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li class="active main"><a href="package-SprdCMS.html">SprdCMS</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-SprdCMSAjaxController.html">SprdCMSAjaxController</a></li>
+				<li><a href="class-SprdCMSBackStore.html">SprdCMSBackStore</a></li>
+				<li><a href="class-SprdCMSCache.html">SprdCMSCache</a></li>
+				<li><a href="class-SprdCMSCommandMapper.html">SprdCMSCommandMapper</a></li>
+				<li><a href="class-SprdCMSDb.html">SprdCMSDb</a></li>
+				<li><a href="class-SprdCMSDbBackup.html">SprdCMSDbBackup</a></li>
+				<li><a href="class-SprdCMSFrontController.html">SprdCMSFrontController</a></li>
+				<li><a href="class-SprdCMSInstall.html">SprdCMSInstall</a></li>
+				<li><a href="class-SprdCMSItem.html">SprdCMSItem</a></li>
+				<li><a href="class-SprdCMSItemCSV.html">SprdCMSItemCSV</a></li>
+				<li><a href="class-SprdCMSItemManual.html">SprdCMSItemManual</a></li>
+				<li><a href="class-SprdCMSLogger.html">SprdCMSLogger</a></li>
+				<li><a href="class-SprdCMSRequest.html">SprdCMSRequest</a></li>
+				<li><a href="class-SprdCMSRewrite.html">SprdCMSRewrite</a></li>
+				<li><a href="class-SprdCMSSession.html">SprdCMSSession</a></li>
+				<li class="active"><a href="class-SprdCMSSiteConfig.html">SprdCMSSiteConfig</a></li>
+				<li><a href="class-SprdCMSStore.html">SprdCMSStore</a></li>
+				<li><a href="class-SprdCMSStoreFront.html">SprdCMSStoreFront</a></li>
+				<li><a href="class-SprdCMSViewControl.html">SprdCMSViewControl</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-SprdCMSProcessor.html">SprdCMSProcessor</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-SprdCMS.html" title="Summary of SprdCMS"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="sprdcms-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+			</li>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class SprdCMSSiteConfig</h1>
+
+
+	<div class="description">
+	
+<p>Provides application wide configuration values.</p>
+
+<p>A helper class that is used to provide application wide configuration values
+as a registry of run time settings. Most configuration values are loaded from an
+XML file located at includes/config.xml. Implemented as a singleton to use a
+single configuration. There is no locking mechanism since only a single user can
+modify the configuration.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-SprdCMS.html">SprdCMS</a><br />
+
+				<b>Copyright:</b>
+				(c) 2013, J-F B<br />
+				<b>License:</b>
+				<a href="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</a><br />
+				<b>Author:</b>
+				J-F B &lt;<a
+href="mailto:ever.livin.never.fearful&#64;gmail.com">ever.livin.never.fearful&#64;<!---->gmail.com</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-SprdCMSSiteConfig.html#9-164" title="Go to source code">cms/includes/lib/configRegistry.inc</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 private 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-SprdCMSSiteConfig.html#39-54" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+<p>The construtor's role is to load the XML configuration file as a SimpleXML
+object.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>The construtor's role is to load the XML configuration file as a SimpleXML
+object.</p>
+
+
+
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code>Exception</code><br>Failure to initialize a DSN connection string will trigger an exception but
+cannot be logged to the database for evident reason.<br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getConfig" id="_getConfig">
+
+		<td class="attributes"><code>
+			 public static
+			<code><a href="class-SprdCMSSiteConfig.html">SprdCMSSiteConfig</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getConfig">#</a>
+		<code><a href="source-class-SprdCMSSiteConfig.html#56-71" title="Go to source code">getConfig</a>( )</code>
+
+		<div class="description short">
+			
+<p>Since the constructor is private we use this method in order to get an
+instance. It stores the instance inside of a private variable and returns the
+same instance each time a call to this method is being made.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Since the constructor is private we use this method in order to get an
+instance. It stores the instance inside of a private variable and returns the
+same instance each time a call to this method is being made.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-SprdCMSSiteConfig.html">SprdCMSSiteConfig</a></code></code><br>Returns an instance of the current class.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getdbCredentials" id="_getdbCredentials">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getdbCredentials">#</a>
+		<code><a href="source-class-SprdCMSSiteConfig.html#73-81" title="Go to source code">getdbCredentials</a>( )</code>
+
+		<div class="description short">
+			
+<p>Helper function that returns an array containing information needed to build
+a DSN (data source name).</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Helper function that returns an array containing information needed to build
+a DSN (data source name).</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>Retuns an array of strings with all the database credentials needed to construct
+PDO.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-SprdCMSDb.html">SprdCMSDb</a></code></code><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getStoreName" id="_getStoreName">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getStoreName">#</a>
+		<code><a href="source-class-SprdCMSSiteConfig.html#83-90" title="Go to source code">getStoreName</a>( )</code>
+
+		<div class="description short">
+			
+<p>Helper function to return store name.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Helper function to return store name.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Returns the human readable name of the store.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDbName" id="_getDbName">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDbName">#</a>
+		<code><a href="source-class-SprdCMSSiteConfig.html#92-100" title="Go to source code">getDbName</a>( )</code>
+
+		<div class="description short">
+			
+<p>Helper function used by the SprdCMSDbBackup class.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Helper function used by the SprdCMSDbBackup class.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The name of the database to connect to.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-SprdCMSDbBackup.html">SprdCMSDbBackup</a></code></code><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDbuser" id="_getDbuser">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDbuser">#</a>
+		<code><a href="source-class-SprdCMSSiteConfig.html#102-110" title="Go to source code">getDbuser</a>( )</code>
+
+		<div class="description short">
+			
+<p>Helper function used by the SprdCMSDbBackup class.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Helper function used by the SprdCMSDbBackup class.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The username of the database to connect to.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-SprdCMSDbBackup.html">SprdCMSDbBackup</a></code></code><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDbPass" id="_getDbPass">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDbPass">#</a>
+		<code><a href="source-class-SprdCMSSiteConfig.html#112-120" title="Go to source code">getDbPass</a>( )</code>
+
+		<div class="description short">
+			
+<p>Helper function used by the SprdCMSDbBackup class.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Helper function used by the SprdCMSDbBackup class.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The password of the database to connect to.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-SprdCMSDbBackup.html">SprdCMSDbBackup</a></code></code><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getShopID" id="_getShopID">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getShopID">#</a>
+		<code><a href="source-class-SprdCMSSiteConfig.html#122-130" title="Go to source code">getShopID</a>( )</code>
+
+		<div class="description short">
+			
+<p>Helper function for getting the Spreadshit shop unique ID. Useful for
+querying the Spreadshirt API.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Helper function for getting the Spreadshit shop unique ID. Useful for
+querying the Spreadshirt API.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Returns the ID of the shop with the value used as input during installation.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-SprdCMSItem.html">SprdCMSItem</a></code></code><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDomain" id="_getDomain">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDomain">#</a>
+		<code><a href="source-class-SprdCMSSiteConfig.html#132-140" title="Go to source code">getDomain</a>( )</code>
+
+		<div class="description short">
+			
+<p>Helper function that returns the spreadshit shop domain in use, either .com
+or .net. Useful for querying the Spreadshirt API.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Helper function that returns the spreadshit shop domain in use, either .com
+or .net. Useful for querying the Spreadshirt API.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Returns com || net.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-SprdCMSItem.html">SprdCMSItem</a></code></code><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRewriteStatus" id="_getRewriteStatus">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRewriteStatus">#</a>
+		<code><a href="source-class-SprdCMSSiteConfig.html#142-150" title="Go to source code">getRewriteStatus</a>( )</code>
+
+		<div class="description short">
+			
+<p>Helper method for querying the status of the URLs rewriting
+configuration.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Helper method for querying the status of the URLs rewriting
+configuration.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>Will return TRUE or FALSE depending on configuration value.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-SprdCMSRewrite.html">SprdCMSRewrite</a></code></code><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getBasePath" id="_getBasePath">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getBasePath">#</a>
+		<code><a href="source-class-SprdCMSSiteConfig.html#152-162" title="Go to source code">getBasePath</a>( )</code>
+
+		<div class="description short">
+			
+<p>When we use URL rewriting there is a risk that it will break relative paths.
+So we provide the full path in order to construct links.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>When we use URL rewriting there is a risk that it will break relative paths.
+So we provide the full path in order to construct links.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Returns the base path in order to make relative links work.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="instance" id="$instance">
+		<td class="attributes"><code>
+			private static 
+			<code><a href="class-SprdCMSSiteConfig.html">SprdCMSSiteConfig</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSSiteConfig.html#21-25" title="Go to source code"><var>$instance</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$instance" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>An instance of the current class type.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>An instance of the current class type.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="connectStr" id="$connectStr">
+		<td class="attributes"><code>
+			private  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSSiteConfig.html#27-31" title="Go to source code"><var>$connectStr</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$connectStr" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Information needed to construct a DSN (data source name) in order to connect
+to the database.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Information needed to construct a DSN (data source name) in order to connect
+to the database.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="xml" id="$xml">
+		<td class="attributes"><code>
+			private  
+			SimpleXML
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSSiteConfig.html#33-37" title="Go to source code"><var>$xml</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$xml" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Hold the XML configuration file in order to access its properties.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Hold the XML configuration file in order to access its properties.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		SprdCMS Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

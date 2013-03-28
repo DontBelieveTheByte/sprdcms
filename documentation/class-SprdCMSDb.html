@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class SprdCMSDb | SprdCMS Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?394153670"></script>
+	<script type="text/javascript" src="elementlist.js?1023897709"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li class="active main"><a href="package-SprdCMS.html">SprdCMS</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-SprdCMSAjaxController.html">SprdCMSAjaxController</a></li>
+				<li><a href="class-SprdCMSBackStore.html">SprdCMSBackStore</a></li>
+				<li><a href="class-SprdCMSCache.html">SprdCMSCache</a></li>
+				<li><a href="class-SprdCMSCommandMapper.html">SprdCMSCommandMapper</a></li>
+				<li class="active"><a href="class-SprdCMSDb.html">SprdCMSDb</a></li>
+				<li><a href="class-SprdCMSDbBackup.html">SprdCMSDbBackup</a></li>
+				<li><a href="class-SprdCMSFrontController.html">SprdCMSFrontController</a></li>
+				<li><a href="class-SprdCMSInstall.html">SprdCMSInstall</a></li>
+				<li><a href="class-SprdCMSItem.html">SprdCMSItem</a></li>
+				<li><a href="class-SprdCMSItemCSV.html">SprdCMSItemCSV</a></li>
+				<li><a href="class-SprdCMSItemManual.html">SprdCMSItemManual</a></li>
+				<li><a href="class-SprdCMSLogger.html">SprdCMSLogger</a></li>
+				<li><a href="class-SprdCMSRequest.html">SprdCMSRequest</a></li>
+				<li><a href="class-SprdCMSRewrite.html">SprdCMSRewrite</a></li>
+				<li><a href="class-SprdCMSSession.html">SprdCMSSession</a></li>
+				<li><a href="class-SprdCMSSiteConfig.html">SprdCMSSiteConfig</a></li>
+				<li><a href="class-SprdCMSStore.html">SprdCMSStore</a></li>
+				<li><a href="class-SprdCMSStoreFront.html">SprdCMSStoreFront</a></li>
+				<li><a href="class-SprdCMSViewControl.html">SprdCMSViewControl</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-SprdCMSProcessor.html">SprdCMSProcessor</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-SprdCMS.html" title="Summary of SprdCMS"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="sprdcms-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+			</li>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class SprdCMSDb</h1>
+
+
+	<div class="description">
+	
+<p>A PDO wrapper class used for handling database operations that is implemented
+as a singleton.</p>
+
+<p>A PDO wrapper class used for handling database operations that is implemented
+as a singleton. The class uses an application wide configuration to build a data
+source name (DSN) and initialize a PDO instance. The constructor is private and
+can only be called via the static method getInstance. getInstance returns the
+same database handle throughout the application.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-SprdCMS.html">SprdCMS</a><br />
+
+				<b>Copyright:</b>
+				(c) 2013, J-F B<br />
+				<b>License:</b>
+				<a href="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</a><br />
+				<b>Author:</b>
+				J-F B &lt;<a
+href="mailto:ever.livin.never.fearful&#64;gmail.com">ever.livin.never.fearful&#64;<!---->gmail.com</a>&gt;<br />
+				<b>See:</b>
+				<code><code><a href="class-SprdCMSSiteConfig.html">SprdCMSSiteConfig</a></code></code><br />
+		<b>Located at</b> <a href="source-class-SprdCMSDb.html#9-172" title="Go to source code">cms/includes/lib/db.inc</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 private 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-SprdCMSDb.html#53-63" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+<p>The constructor is prive and can only be called by the static method
+getInstance. It sets a single instance that is held inside of a static private
+variable.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>The constructor is prive and can only be called by the static method
+getInstance. It sets a single instance that is held inside of a static private
+variable.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getInstance" id="_getInstance">
+
+		<td class="attributes"><code>
+			 public static
+			PDO
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getInstance">#</a>
+		<code><a href="source-class-SprdCMSDb.html#65-76" title="Go to source code">getInstance</a>( )</code>
+
+		<div class="description short">
+			
+<p>Get a database instance. This is the public interface where we must go
+through in order to acquire a database handle.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get a database instance. This is the public interface where we must go
+through in order to acquire a database handle.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>PDO</code><br>Returns a single PDO instance no matter how many times it is called.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="exec" id="_exec">
+
+		<td class="attributes"><code>
+			 public 
+			integer|boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_exec">#</a>
+		<code><a href="source-class-SprdCMSDb.html#78-86" title="Go to source code">exec</a>( <span>string <var>$sql</var></span> )</code>
+
+		<div class="description short">
+			
+<p>PDO::exec wrapper for SQL statements. PDO::exec does not sanitize any
+values.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>PDO::exec wrapper for SQL statements. PDO::exec does not sanitize any
+values.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd><code>string</code><br>$sql Takes a SQL statement as string and delegates to PDO::exec.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer|boolean</code><br>Returns an integer representing the number of rows affected so 0 is not ===
+FALSE in case we alter a table. Returns boolean FALSE on failure.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="beginTransaction" id="_beginTransaction">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_beginTransaction">#</a>
+		<code><a href="source-class-SprdCMSDb.html#88-95" title="Go to source code">beginTransaction</a>( )</code>
+
+		<div class="description short">
+			
+<p>Simple wrapper around PDO::beginTransaction.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Simple wrapper around PDO::beginTransaction.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>Note that this still returns TRUE when transaction are not supported by the
+database backend (when not using MyIsam).<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="commit" id="_commit">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_commit">#</a>
+		<code><a href="source-class-SprdCMSDb.html#97-104" title="Go to source code">commit</a>( )</code>
+
+		<div class="description short">
+			
+<p>Simple wrapper around PDO::commit.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Simple wrapper around PDO::commit.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>Note that this still returns TRUE when transaction are not supported by the
+database backend (when not using MyIsam).<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="rollBack" id="_rollBack">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rollBack">#</a>
+		<code><a href="source-class-SprdCMSDb.html#106-113" title="Go to source code">rollBack</a>( )</code>
+
+		<div class="description short">
+			
+<p>Simple wrapper around PDO::rollBack.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Simple wrapper around PDO::rollBack.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>Note that this still returns TRUE when transaction are not supported by the
+database backend (when not using MyIsam).<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="query" id="_query">
+
+		<td class="attributes"><code>
+			 public 
+			PDOStatement|boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_query">#</a>
+		<code><a href="source-class-SprdCMSDb.html#115-123" title="Go to source code">query</a>( <span>string <var>$sql</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Run an SQL query using PDO::query.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Run an SQL query using PDO::query.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd><code>string</code><br>A valid SQL query, input is not sanitized and should not be used in most cases.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>PDOStatement|boolean</code><br>Returns a PDOStatement to fetch the values or boolean FALSE depending on
+validity.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="prepare" id="_prepare">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_prepare">#</a>
+		<code><a href="source-class-SprdCMSDb.html#125-140" title="Go to source code">prepare</a>( <span>string <var>$sql</var></span>, <span>array <var>$params</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Run prepared SQL statements with PDO::prepare.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Run prepared SQL statements with PDO::prepare.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd><code>string</code><br>The string containing the SQL command with valid syntax.</dd>
+					<dt><var>$params</var></dt>
+					<dd><code>array</code><br>Defaults to NULL or an associative array of binded values expected by the
+prepared statement. Dangerous values of unsanitized input should be escaped
+during this call.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>Method returns TRUE or FALSE depending on outcome of the PDO::execute method
+because it is automatically called.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fetchAll" id="_fetchAll">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fetchAll">#</a>
+		<code><a href="source-class-SprdCMSDb.html#142-150" title="Go to source code">fetchAll</a>( <span>string <var>$fetchType</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetch everything at once from a prepared statement using the PDO::fetchALL
+method.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetch everything at once from a prepared statement using the PDO::fetchALL
+method.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$fetchType</var></dt>
+					<dd><code>string</code><br>Should be a PDO::CONSTANT, we can specify what type of data we get back, default
+is a stdClass object if nothing is specified.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br>Return is specified the the $fetchType parameter and must be a PDO constant.
+Default value is PDO::FETCH_OBJ.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fetch" id="_fetch">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fetch">#</a>
+		<code><a href="source-class-SprdCMSDb.html#152-160" title="Go to source code">fetch</a>( <span>string <var>$fetchType</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetch one row at the time from a prepared statement.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetch one row at the time from a prepared statement.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$fetchType</var></dt>
+					<dd><code>string</code><br>Should be a PDO::CONSTANT. Default value is PDO::FETCH_OBJ or otherwise
+specified parameter.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br>Return is specified the the $fetchType parameter and must be a PDO constant.
+Default value is PDO::FETCH_OBJ.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="quote" id="_quote">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_quote">#</a>
+		<code><a href="source-class-SprdCMSDb.html#162-170" title="Go to source code">quote</a>( <span>string <var>$string</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Wrapper arount PDO::quote, normally used outside the context of a PDO
+prepared statement.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Wrapper arount PDO::quote, normally used outside the context of a PDO
+prepared statement.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$string</var></dt>
+					<dd><code>string</code><br>The string we want to quote.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The quoted string.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="config" id="$config">
+		<td class="attributes"><code>
+			private  
+			<code><a href="class-SprdCMSSiteConfig.html">SprdCMSSiteConfig</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSDb.html#23-27" title="Go to source code"><var>$config</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$config" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>A reference to an instance of a site wide configuration.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>A reference to an instance of a site wide configuration.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="dbh" id="$dbh">
+		<td class="attributes"><code>
+			private  
+			PDO
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSDb.html#29-33" title="Go to source code"><var>$dbh</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$dbh" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>An instance of a PDO database handle.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>An instance of a PDO database handle.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="connectStr" id="$connectStr">
+		<td class="attributes"><code>
+			private  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSDb.html#35-39" title="Go to source code"><var>$connectStr</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$connectStr" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>An array with database connection information used to build the DSN (data
+source name) needed to construct a PDO object.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>An array with database connection information used to build the DSN (data
+source name) needed to construct a PDO object.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="stm" id="$stm">
+		<td class="attributes"><code>
+			private  
+			PDOStatement
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSDb.html#41-45" title="Go to source code"><var>$stm</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$stm" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>A reference to a PDOStatement object.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>A reference to a PDOStatement object.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="instance" id="$instance">
+		<td class="attributes"><code>
+			private static 
+			PDO
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-SprdCMSDb.html#47-51" title="Go to source code"><var>$instance</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$instance" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>This class variable holds a refenrence to a single PDO instance.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>This class variable holds a refenrence to a single PDO instance.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		SprdCMS Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

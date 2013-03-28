@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class SprdCMSInstall | SprdCMS Documentation</title>
+
+	<script type="text/javascript" src="resources/combined.js?394153670"></script>
+	<script type="text/javascript" src="elementlist.js?1023897709"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li class="active main"><a href="package-SprdCMS.html">SprdCMS</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-SprdCMSAjaxController.html">SprdCMSAjaxController</a></li>
+				<li><a href="class-SprdCMSBackStore.html">SprdCMSBackStore</a></li>
+				<li><a href="class-SprdCMSCache.html">SprdCMSCache</a></li>
+				<li><a href="class-SprdCMSCommandMapper.html">SprdCMSCommandMapper</a></li>
+				<li><a href="class-SprdCMSDb.html">SprdCMSDb</a></li>
+				<li><a href="class-SprdCMSDbBackup.html">SprdCMSDbBackup</a></li>
+				<li><a href="class-SprdCMSFrontController.html">SprdCMSFrontController</a></li>
+				<li class="active"><a href="class-SprdCMSInstall.html">SprdCMSInstall</a></li>
+				<li><a href="class-SprdCMSItem.html">SprdCMSItem</a></li>
+				<li><a href="class-SprdCMSItemCSV.html">SprdCMSItemCSV</a></li>
+				<li><a href="class-SprdCMSItemManual.html">SprdCMSItemManual</a></li>
+				<li><a href="class-SprdCMSLogger.html">SprdCMSLogger</a></li>
+				<li><a href="class-SprdCMSRequest.html">SprdCMSRequest</a></li>
+				<li><a href="class-SprdCMSRewrite.html">SprdCMSRewrite</a></li>
+				<li><a href="class-SprdCMSSession.html">SprdCMSSession</a></li>
+				<li><a href="class-SprdCMSSiteConfig.html">SprdCMSSiteConfig</a></li>
+				<li><a href="class-SprdCMSStore.html">SprdCMSStore</a></li>
+				<li><a href="class-SprdCMSStoreFront.html">SprdCMSStoreFront</a></li>
+				<li><a href="class-SprdCMSViewControl.html">SprdCMSViewControl</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-SprdCMSProcessor.html">SprdCMSProcessor</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-SprdCMS.html" title="Summary of SprdCMS"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="sprdcms-documentation-api-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+			</li>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class SprdCMSInstall</h1>
+
+
+	<div class="description">
+	
+<p>The install script.</p>
+
+<p>This class is instantiated only during installation of the application. It
+takes care of setting up the environment needed to run SprdCMS. There is no
+constuctor method, we have to call ::initStore to attempt initialization.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-SprdCMS.html">SprdCMS</a><br />
+
+				<b>Copyright:</b>
+				(c) 2013, J-F B<br />
+				<b>License:</b>
+				<a href="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</a><br />
+				<b>Author:</b>
+				J-F B &lt;<a
+href="mailto:ever.livin.never.fearful&#64;gmail.com">ever.livin.never.fearful&#64;<!---->gmail.com</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-SprdCMSInstall.html#9-241" title="Go to source code">cms/includes/lib/install.inc</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="initStore" id="_initStore">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_initStore">#</a>
+		<code><a href="source-class-SprdCMSInstall.html#20-47" title="Go to source code">initStore</a>( )</code>
+
+		<div class="description short">
+			
+<p>The init method sequentially calls its internal methods and tests their
+return value.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>The init method sequentially calls its internal methods and tests their
+return value.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>Once all the steps are completed and valid, it should return TRUE.<br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code>Exception</code><br>In the event of failure of any of the internat steps that return FALSE, we throw
+an exception and helper back to the user's browser.<br />
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="filter" id="_filter">
+
+		<td class="attributes"><code>
+			 private 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_filter">#</a>
+		<code><a href="source-class-SprdCMSInstall.html#49-116" title="Go to source code">filter</a>( )</code>
+
+		<div class="description short">
+			
+<p>There is already user side form validation but we cross check server side
+using PHP's builting validation functions.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>There is already user side form validation but we cross check server side
+using PHP's builting validation functions.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>Returns TRUE or FALSE reflecting the outcome of validating the user's input.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="initXmlConfig" id="_initXmlConfig">
+
+		<td class="attributes"><code>
+			 private 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_initXmlConfig">#</a>
+		<code><a href="source-class-SprdCMSInstall.html#118-145" title="Go to source code">initXmlConfig</a>( )</code>
+
+		<div class="description short">
+			
+<p>SpdCMS needs an application wide configuration file in order to run.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>SpdCMS needs an application wide configuration file in order to run.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>Returns TRUE or FALSE matching the outcome of writing the content of the XML
+configuration file to the disk.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						SprdCMSSiteConfig This method is only called after the fact that the input is
+validated, so we know $_POST contains sane values. A string is built in order to write an
+XML file is to disk.<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="initDb" id="_initDb">
+
+		<td class="attributes"><code>
+			 private 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_initDb">#</a>
+		<code><a href="source-class-SprdCMSInstall.html#147-206" title="Go to source code">initDb</a>( )</code>
+
+		<div class="description short">
+			
+<p>This is where the database schema is defined and tables are initialized. The
+method can only be called after the configuration file has been written since we
+use the SprdCMSDb class.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>This is where the database schema is defined and tables are initialized. The
+method can only be called after the configuration file has been written since we
+use the SprdCMSDb class.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>Returns TRUE if all tables in the schema are created correctly or FALSE if there
+is any errors.<br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code>Exception</code><br>Failure to create table will trigger exceptions and also return FALSE.<br />
+				</div>
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-SprdCMSDb.html">SprdCMSDb</a></code></code><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="filePerm" id="_filePerm">
+
+		<td class="attributes"><code>
+			 private 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_filePerm">#</a>
+		<code><a href="source-class-SprdCMSInstall.html#208-221" title="Go to source code">filePerm</a>( )</code>
+
+		<div class="description short">
+			
+<p>There are two directories that need to be writable by SprdCMS. includes needs
+to be writable to save and modify the configuration file. images needs to be
+writable in order to cache the article's images on disk.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>There are two directories that need to be writable by SprdCMS. includes needs
+to be writable to save and modify the configuration file. images needs to be
+writable in order to cache the article's images on disk.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>If any of the directories are not writable by the application it will return
+FALSE otherwise returns TRUE.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="initPassword" id="_initPassword">
+
+		<td class="attributes"><code>
+			 private 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_initPassword">#</a>
+		<code><a href="source-class-SprdCMSInstall.html#223-239" title="Go to source code">initPassword</a>( )</code>
+
+		<div class="description short">
+			
+<p>The sets the site administrator's username and password for logging in. The
+salt used is a simple hash of the database name. No salt algorithm is proposed
+for now and hashing method is left to the current default PHP installation
+configuration of the crypt function.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>The sets the site administrator's username and password for logging in. The
+salt used is a simple hash of the database name. No salt algorithm is proposed
+for now and hashing method is left to the current default PHP installation
+configuration of the crypt function.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>TRUE is returned if the crypted value is written to the database or FALSE if
+cannot save it.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		SprdCMS Documentation API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
