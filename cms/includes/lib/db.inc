@@ -30,19 +30,19 @@ Class SprdCMSDb {
      * An instance of a PDO database handle.
      * @var PDO
      */
-    private $dbh;
+    private $databaseHandle;
 
     /**
      * An array with database connection information used to build the DSN (data source name) needed to construct a PDO object.
      * @var array
      */
-    private $connectStr;
+    private $connectionString;
 
     /**
      * A reference to a PDOStatement object.
      * @var PDOStatement
      */
-    private $stm;
+    private $statement;
 
     /**
      * This class variable holds a refenrence to a single PDO instance.
@@ -56,10 +56,10 @@ Class SprdCMSDb {
      */
     private function __construct() {
         $this->config = SprdCMSSiteConfig::getConfig();
-        $this->connectStr = $this->config->getdbCredentials();
-        $this->dbh = new PDO($this->connectStr[0], $this->connectStr[1], $this->connectStr[2]);
-        $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $this->dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+        $this->connectionString = $this->config->getdbCredentials();
+        $this->databaseHandle = new PDO($this->connectionString[0], $this->connectionString[1], $this->connectionString[2]);
+        $this->databaseHandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->databaseHandle->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     }
 
     /**
@@ -78,11 +78,11 @@ Class SprdCMSDb {
     /**
      * PDO::exec wrapper for SQL statements. PDO::exec does not sanitize any values.
      *
-     * @param string $sql Takes a SQL statement as string and delegates to PDO::exec.
+     * @param string $statement Takes a SQL statement as string and delegates to PDO::exec.
      * @return int|bool Returns an integer representing the number of rows affected so 0 is not === FALSE in case we alter a table. Returns boolean FALSE on failure.
      */
-    public function exec($sql) {
-        return $this->dbh->exec($sql);
+    public function exec($statement) {
+        return $this->databaseHandle->exec($statement);
     }
 
     /**
@@ -91,7 +91,7 @@ Class SprdCMSDb {
      * @return  bool Note that this still returns TRUE when transaction are not supported by the database backend (when not using MyIsam).
      */
     public function beginTransaction() {
-        return $this->dbh->beginTransaction();
+        return $this->databaseHandle->beginTransaction();
     }
 
     /**
@@ -100,7 +100,7 @@ Class SprdCMSDb {
      * @return  bool Note that this still returns TRUE when transaction are not supported by the database backend (when not using MyIsam).
      */
     public function commit() {
-        return $this->dbh->commit();
+        return $this->databaseHandle->commit();
     }
 
     /**
@@ -109,7 +109,7 @@ Class SprdCMSDb {
      * @return  bool Note that this still returns TRUE when transaction are not supported by the database backend (when not using MyIsam).
      */
     public function rollBack() {
-        return $this->dbh->rollBack();
+        return $this->databaseHandle->rollBack();
     }
 
     /**
@@ -118,8 +118,8 @@ Class SprdCMSDb {
      * @param string A valid SQL query, input is not sanitized and should not be used in most cases.
      * @return PDOStatement|bool Returns a PDOStatement to fetch the values or boolean FALSE depending on validity.
      */
-    public function query($sql) {
-        return $this->dbh->query($sql);
+    public function query($query) {
+        return $this->databaseHandle->query($query);
     }
 
     /**
@@ -129,14 +129,14 @@ Class SprdCMSDb {
      * @param array Defaults to NULL or an associative array of binded values expected by the prepared statement. Dangerous values of unsanitized input should be escaped during this call.
      * @return boolean Method returns TRUE or FALSE depending on outcome of the PDO::execute method because it is automatically called.
      */
-    public function prepare($sql, Array $params = NULL) {
-        $this->stm = $this->dbh->prepare($sql);
-        if ($params != NULL) {
-            foreach ($params as $key => $value) {
-                $this->stm->bindValue($key, $value);
+    public function prepare($statement, Array $parameters = NULL) {
+        $this->statement = $this->databaseHandle->prepare($statement);
+        if ($parameters != NULL) {
+            foreach ($parameters as $key => $value) {
+                $this->statement->bindValue($key, $value);
             }
         }
-        return $this->stm->execute();
+        return $this->statement->execute();
     }
 
     /**
@@ -146,7 +146,7 @@ Class SprdCMSDb {
      * @return mixed Return is specified the the $fetchType parameter and must be a PDO constant. Default value is PDO::FETCH_OBJ.
      */
     public function fetchAll($fetchType = NULL) {
-        return $fetchType ? $this->stm->fetch($fetchType) : $this->stm->fetchAll();
+        return $fetchType ? $this->statement->fetch($fetchType) : $this->statement->fetchAll();
     }
 
     /**
@@ -156,7 +156,7 @@ Class SprdCMSDb {
      * @return mixed Return is specified the the $fetchType parameter and must be a PDO constant. Default value is PDO::FETCH_OBJ.
      */
     public function fetch($fetchType = NULL) {
-        return $fetchType ? $this->stm->fetch($fetchType) : $this->stm->fetch();
+        return $fetchType ? $this->statement->fetch($fetchType) : $this->statement->fetch();
     }
 
     /**
@@ -166,8 +166,7 @@ Class SprdCMSDb {
      * @return string The quoted string.
      */
     public function quote($string) {
-        return $this->dbh->quote($string);
+        return $this->databaseHandle->quote($string);
     }
 
 }
-
