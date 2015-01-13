@@ -61,7 +61,7 @@ class SprdCMSCommandMapper implements SprdCMSProcessor {
                     break;
                 case "article":
                 case "category":
-                    require_once './includes/lib/storeFront.inc';
+                    require_once '../includes/lib/storeFront.inc';
                     $store = new SprdCMSStoreFront();
                     $renderable = ($this->params[0] === "article") ? $store->getArticle($this->params[1]) : $store->getCategory($this->params[1]);
                     if (!$renderable) {//in case article or category doesn't exist.
@@ -72,12 +72,12 @@ class SprdCMSCommandMapper implements SprdCMSProcessor {
                     }
                     break;
                 case "logout":
-                    require_once './includes/lib/session.inc';
+                    require_once '../includes/lib/session.inc';
                     SprdCMSSession::stop();
                     $this->process(array("category", "Home"));
                     break;
                 case "login":
-                    require_once './includes/lib/session.inc';
+                    require_once '../includes/lib/session.inc';
                     if (isset($_POST['r']) && $_POST['r'] == "login") {
                         SprdCMSSession::adminLogin($_POST["username"], $_POST['password']);
                     }
@@ -86,24 +86,24 @@ class SprdCMSCommandMapper implements SprdCMSProcessor {
                     $this->viewControl->render();
                     break;
                 case "admin" :
-                    require_once './includes/lib/session.inc';
+                    require_once '../includes/lib/session.inc';
                     $view = SprdCMSSession::getLoginStatus() ? "admin" : "login";
                     $this->viewControl->loadView($view);
                     $this->viewControl->render();
                     break;
                 case "getcsv":
-                    require_once './includes/lib/session.inc';
+                    require_once '../includes/lib/session.inc';
                     if (SprdCMSSession::getLoginStatus() && file_exists('./includes/shirtlist.csv')) {
-                        include './includes/shirtlist.csv';
+                        include '../includes/shirtlist.csv';
                     }
                     break;
                 case "ajax" :
-                    require_once './includes/lib/ajaxCommandMapper.inc';
+                    require_once '../includes/lib/ajaxCommandMapper.inc';
                     $ajax = new SprdCMSAjaxController();
                     $ajax->process(); //Delegate to Ajax handler from here.
                     break;
                 case "dbBackup" :
-                    require_once './includes/lib/session.inc';
+                    require_once '../includes/lib/session.inc';
                     if (SprdCMSSession::getLoginStatus() === TRUE) {
                         require_once './includes/lib/dbBackup.inc';
                         $backup = new SprdCMSDbBackup();

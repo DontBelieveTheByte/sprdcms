@@ -32,8 +32,8 @@ class SprdCMSViewControl {
      */
     public function loadView($view) {
         try {
-            if (file_exists("./includes/views/$view.tpl")) {
-                $this->template = "./includes/views/$view.tpl";
+            if (file_exists("../includes/views/$view.tpl")) {
+                $this->template = "../includes/views/$view.tpl";
             } else {
                 throw new Exception("Cannot locate and load HTML template file $view. Template file is either missing or file permission if wrong.");
             }

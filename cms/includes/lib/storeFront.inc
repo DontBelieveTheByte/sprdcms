@@ -4,7 +4,7 @@
  * @copyright (c) 2013, J-F B
  * @license http://www.gnu.org/licenses/gpl-3.0.html
  */
-require_once './includes/lib/store.inc';
+require_once '../includes/lib/store.inc';
 
 /**
  * Provides client side store functionality by extending SprdCMSStore base class.
