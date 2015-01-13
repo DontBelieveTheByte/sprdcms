@@ -7,9 +7,9 @@
  */
 
 /**
- * This interface garantees that the process method will be implemented by different classes.
+ * This interface guarantees that the process method will be implemented by different classes.
  *
- * This interface garantees that the process method will be implemented by different classes.
+ * This interface guarantees that the process method will be implemented by different classes.
  * It is mostly used for delegation to another object depending on the flow of the application.
  *
  * @package   SprdCMS
