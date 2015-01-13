@@ -40,10 +40,14 @@ class SprdCMSInstall {
                 return TRUE;
             }
         } catch (Exception $e) {
-            echo "<br>" . $e->getMessage() . "<br>"; //handle exception here
-            echo '<br>To reset the installation process, remove all tables from the database and delete includes/config.xml configuration file if present.<br>';
-            exit();
+            $this->handleFailedInstall($e);
         }
+    }
+
+    private function handleFailedInstall($exception) {
+        echo "<br>" . $exception->getMessage() . "<br>"; //handle exception here
+        echo '<br>To reset the installation process, remove all tables from the database and delete includes/config.xml configuration file if present.<br>';
+        exit();
     }
 
     /**
