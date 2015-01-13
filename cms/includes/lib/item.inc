@@ -23,16 +23,16 @@ require_once '../includes/lib/itemManual.inc';
 abstract class SprdCMSItem {
 
     /**
-     * The unique ID of the article we want to in our store as an article, this is obtained from spreadshirt.
+     * The unique ID of the article we want to in our store as an article, this is obtained from Spreadshirt.
      * @var string
      */
-    protected $id;
+    protected $spreadShirtId;
 
     /**
-     * The product ID of an article. Several articles can have the same product ID, this is obtained from spreadshirt.
+     * The product ID of an article. Several articles can have the same product ID, this is obtained from Spreadshirt.
      * @var string
      */
-    protected $pid;
+    protected $spreadShirtProductId;
 
     /**
      * The name of of an article. This normally has semantic meaning to humans.
@@ -44,19 +44,19 @@ abstract class SprdCMSItem {
      * Articles can have a short textual description. This description can be updated by the site administrator.
      * @var string
      */
-    protected $desc;
+    protected $description;
 
     /**
      * Articles have two images mirrored on disk, this image is a zoom of the design being sold.
      * @var string
      */
-    protected $img0;
+    protected $image0;
 
     /**
      * Articles have two images mirrored on disk, this image shows the product with the included design.
      * @var string
      */
-    protected $img1;
+    protected $image1;
 
     /**
      * This normally holds the price of an item. It is set only once when the article is imported.
@@ -65,7 +65,7 @@ abstract class SprdCMSItem {
     protected $price;
 
     /**
-     * Until the spreadshirt API is fully implement, we use an iframe to display a single article from spreadshirt. This is the actual URL of an article from spreadshirt.
+     * Until the Spreadshirt API is fully implement, we use an iframe to display a single article from Spreadshirt. This is the actual URL of an article from Spreadshirt.
      * @var string
      */
     protected $url;
@@ -77,19 +77,19 @@ abstract class SprdCMSItem {
     protected $color;
 
     /**
-     * Holds a reference to SprdCMSDb singleton isntance in order to make calls on the database.
+     * Holds a reference to SprdCMSDb singleton instance in order to make calls on the database.
      *
      * @see SprdCMSDb
      * @var SprdCMSDb
      */
-    protected $sdb;
+    protected $database;
 
     /**
      * The constructor's role is simply to obtain a database instance a set the reference to the $sdb property.
      *
      */
     public function __construct() {
-        $this->sdb = SprdCMSDb::getInstance();
+        $this->database = SprdCMSDb::getInstance();
     }
 
     /**
@@ -108,10 +108,10 @@ abstract class SprdCMSItem {
      * This is a static factory method that should return a valid instance of SprdCMSitemManualFactory.
      *
      * @static
-     * @param string $item Takes a string that represents a valid spreadshirt article.
+     * @param string $item Takes a string that represents a valid Spreadshirt article.
      * @see SprdCMSItemManual
      * @return SprdCMSItemManual Returns an instance of a valid SprdCMSItemManual object.
-     * @todo The child class is not fully implemented yet, it will be ready for the full integration with the spreadshirt API.
+     * @todo The child class is not fully implemented yet, it will be ready for the full integration with the Spreadshirt API.
      */
     public static function SprdCMSitemManualFactory($item) {
         return new SprdCMSItemManual($item);
@@ -123,7 +123,7 @@ abstract class SprdCMSItem {
      * @return  string The unique ID of the article.
      */
     public function getId() {
-        return $this->id;
+        return $this->spreadShirtId;
     }
 
     /**
@@ -132,7 +132,7 @@ abstract class SprdCMSItem {
      * @return  string The unique ID of the product.
      */
     public function getProduct() {
-        return (string) $this->pid;
+        return (string) $this->spreadShirtProductId;
     }
 
     /**
@@ -150,7 +150,7 @@ abstract class SprdCMSItem {
      * @return  string The file name on disk of the zoom image.
      */
     public function getImg0() {
-        return $this->img0;
+        return $this->image0;
     }
 
     /**
@@ -159,7 +159,7 @@ abstract class SprdCMSItem {
      * @return  string The file name on disk of the article's image.
      */
     public function getImg1() {
-        return $this->img1;
+        return $this->image1;
     }
 
     /**
@@ -177,13 +177,13 @@ abstract class SprdCMSItem {
      * @return  string A string of text representing a description.
      */
     public function getDescription() {
-        return $this->desc;
+        return $this->description;
     }
 
     /**
-     * Getter for the current instance's URL at spreadshirt.
+     * Getter for the current instance's URL at Spreadshirt.
      *
-     * @return  string The URL of an article being sold at spreadshirt. This can be null in case of a fully integreted store with on site shopping cart.
+     * @return  string The URL of an article being sold at Spreadshirt. This can be null in case of a fully integreted store with on site shopping cart.
      */
     public function getUrl() {
         return $this->url;
@@ -220,7 +220,7 @@ abstract class SprdCMSItem {
                 ':color' => $this->getColor()
             );
             $sql = "INSERT INTO `articles`(`id`, `pid`, `name`, `desc`, `img0`, `img1`, `price`, `url`, `color`) VALUES(:id, :pid, :name, :desc, :img0, :img1, :price, :url, :color)";
-            if ($this->sdb->prepare($sql, $bindings) === TRUE) {
+            if ($this->database->prepare($sql, $bindings) === TRUE) {
                 return TRUE;
             }
             throw new Exception("Unable to save new item #" . $this->getId() . " database");
