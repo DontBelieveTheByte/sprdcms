@@ -21,7 +21,7 @@ class SprdCMSInstall {
      * The init method sequentially calls its internal methods and tests their return value.
      *
      * @return bool Once all the steps are completed and valid, it should return TRUE.
-     * @throws Exception In the event of failure of any of the internat steps that return FALSE, we throw an exception and helper back to the user's browser.
+     * @throws Exception In the event of failure of any of the internal steps that return FALSE, we throw an exception and helper back to the user's browser.
      */
     public function initStore() {
         try {
