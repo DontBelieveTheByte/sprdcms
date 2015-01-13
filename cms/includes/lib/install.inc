@@ -11,7 +11,7 @@
  *
  * This class is instantiated only during installation of the application.
  * It takes care of setting up the environment needed to run SprdCMS.
- * There is no constuctor method, we have to call ::initStore to attempt initialization.
+ * There is no constructor method, we have to call ::initStore to attempt initialization.
  *
  * @package   SprdCMS
  */
