@@ -31,7 +31,7 @@ class SprdCMSItemCSV extends SprdCMSItem {
      * The constructor is usually called within the context of a static factory method of the abstract parent class.
      * It uses an associative array as its input parameters for setting the properties of the instance.
      * Some properties can be NULL while other cannot, see the database schema defined in SprdCMSInstall::initDb.
-     * @see SprdCMSInstall::initDb
+     * @see SprdCMSInstall::initializeDatabase
      *
      * @param array $item A numerically index array matching all the necessary CSV fields as input.
      */
@@ -74,13 +74,13 @@ class SprdCMSItemCSV extends SprdCMSItem {
                         throw new Exception("Unable to write image file " . $filename . " to disk for article " . $this->id);
                     }
                 } else {
-                    throw new Exception("Unable to get image files from spreadshirt");
+                    throw new Exception("Unable to get image files from Spreadshirt");
                 }
             }
             return TRUE;
-        } catch (Exception $exc) {
+        } catch (Exception $e) {
             $log = new SprdCMSLogger();
-            $log->logEvent($exc);
+            $log->logEvent($e);
             return FALSE;
         }
     }
