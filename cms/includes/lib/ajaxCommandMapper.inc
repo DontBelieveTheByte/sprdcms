@@ -48,10 +48,9 @@ class SprdCMSAjaxController implements SprdCMSProcessor {
      */
     public function process($param = NULL) {
         try {
-            require_once './includes/lib/session.inc';
+            require_once '../includes/lib/session.inc';
             switch ($this->command) {
                 case "activeToggleItem" :
-//                case "addShopItemManual" : Not implemented yet
                 case "addShopItemCSV" :
                 case "delCategory" :
                 case "delShopItem" :
@@ -64,7 +63,7 @@ class SprdCMSAjaxController implements SprdCMSProcessor {
                 case "sortCategories" :
                 case "updateItemDesc" :
                     if (SprdCMSSession::getLoginStatus()) {
-                        require_once './includes/lib/backStore.inc';
+                        require_once '../includes/lib/backStore.inc';
                         $store = new SprdCMSBackStore();
                         echo json_encode($store->{$this->command}($this->storeParam));
                     } else {
@@ -72,17 +71,17 @@ class SprdCMSAjaxController implements SprdCMSProcessor {
                     }
                     break;
                 case "install" :
-                    if (file_exists("./includes/config.xml")) {
+                    if (file_exists("../includes/config.xml")) {
                         header("HTTP/1.1 500 Internal Server Error"); //Stop against request forgery once installed.
                         break;
                     }
-                    require_once './includes/lib/install.inc';
+                    require_once '../includes/lib/install.inc';
                     $installer = new SprdCMSInstall();
                     echo json_encode($installer->initStore());
                     break;
                 case "csvUpload" :
                     if (SprdCMSSession::getLoginStatus() && isset($_FILES['csvFile']) && $_FILES['csvFile']['type'] == "text/csv") {
-                        echo json_encode(copy($_FILES['csvFile']['tmp_name'], "./includes/shirtlist.csv"));
+                        echo json_encode(copy($_FILES['csvFile']['tmp_name'], "../includes/shirtlist.csv"));
                     } else {
                         throw new Exception("IP " . $_SERVER['REMOTE_ADDR'] . " failed to upload and save CSV File " . $_FILES['csvFile']);
                     }
