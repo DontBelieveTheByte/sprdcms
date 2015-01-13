@@ -7,7 +7,7 @@
  */
 
 /**
- * This class handles finding and loading and redenring of different views.
+ * This class handles finding and loading and rendering of different views.
  *
  * The constructor of the User class takes a Data Mapper which
  * handles the user persistence in the database. In this case,
