@@ -25,16 +25,16 @@ class SprdCMSInstall {
      */
     public function initStore() {
         try {
-            if ($this->filter() !== TRUE) {
+            if ($this->filterInstallFormData() !== TRUE) {
                 throw new Exception("Invalid form input. Server side validation fail.");
             }
-            if ($this->filePerm() !== TRUE) {
+            if ($this->areDirectoriesWritable() !== TRUE) {
                 throw new Exception("Install failed on file permission. Make sure images and includes directory are both writable by the web server.");
             } elseif ($this->initXmlConfig() !== TRUE) {
                 throw new Exception("Install failed on initializing XML config.");
-            } elseif ($this->initDb() !== TRUE) {
+            } elseif ($this->initializeDatabase() !== TRUE) {
                 throw new Exception("Install failed on initializing database.");
-            } elseif ($this->initPassword() !== TRUE) {
+            } elseif ($this->initializePassword() !== TRUE) {
                 throw new Exception("Install failed on intitializing password.");
             } else {
                 return TRUE;
@@ -55,8 +55,8 @@ class SprdCMSInstall {
      *
      * @return  bool Returns TRUE or FALSE reflecting the outcome of validating the user's input.
      */
-    private function filter() {
-        $filters = array(
+    private function filterInstallFormData() {
+        $validationFilters = array(
             'shopName' => array(
                 "filter" => FILTER_VALIDATE_REGEXP,
                 "options" => array(
@@ -110,9 +110,9 @@ class SprdCMSInstall {
                 )
             ),
             'email' => FILTER_VALIDATE_EMAIL);
-        $this->post = filter_input_array(INPUT_POST, $filters);
-        foreach ($this->post as $post) {
-            if (empty($post)) {
+        $formValues = filter_input_array(INPUT_POST, $validationFilters);
+        foreach ($formValues as $formValue) {
+            if (empty($formValue)) {
                 return FALSE;
             }
         }
@@ -145,7 +145,7 @@ class SprdCMSInstall {
                 '</shop>' .
                 '<modrewrite>0</modrewrite>' .
                 '</config>';
-        return (@file_put_contents("includes/config.xml", $xmlConfigPayload) !== FALSE) ? TRUE : FALSE;
+        return (@file_put_contents("../includes/config.xml", $xmlConfigPayload) !== FALSE) ? TRUE : FALSE;
     }
 
     /**
@@ -155,9 +155,9 @@ class SprdCMSInstall {
      * @throws Exception Failure to create table will trigger exceptions and also return FALSE.
      * @return  bool Returns TRUE if all tables in the schema are created correctly or FALSE if there is any errors.
      */
-    private function initDb() {
+    private function initializeDatabase() {
 
-        $sdb = SprdCMSDb::getInstance();
+        $database = SprdCMSDb::getInstance();
         $tables = array(
             'articles' => "CREATE TABLE IF NOT EXISTS `articles`
                                 (`id` char(8) PRIMARY KEY,
@@ -187,7 +187,7 @@ class SprdCMSInstall {
                                  `message` mediumtext NULL) ENGINE=InnoDB"
         );
         foreach ($tables as $table) {
-            if ($sdb->prepare($table) === FALSE) {
+            if ($database->prepare($table) === FALSE) {
                 throw new Exception("Error initializing $table <br>");
                 return FALSE;
             }
@@ -197,14 +197,13 @@ class SprdCMSInstall {
             $bindings = array(
                 ':sort_id' => $value
             );
-            if ($sdb->prepare("INSERT INTO `sort`(`sort_id`) VALUES (:sort_id)", $bindings) === FALSE) {
+            if ($database->prepare("INSERT INTO `sort`(`sort_id`) VALUES (:sort_id)", $bindings) === FALSE) {
                 throw new Exception("Error inserting into sort table. <br>");
                 return FALSE;
             }
         }
-        if ($sdb->prepare("INSERT INTO `cache`(`category_id`) VALUES ('Home')") === FALSE) {
+        if ($database->prepare("INSERT INTO `cache`(`category_id`) VALUES ('Home')") === FALSE) {
             throw new Exception("Error inserting into caching table. <br>");
-            return FALSE;
         }
         return TRUE;
     }
@@ -216,9 +215,9 @@ class SprdCMSInstall {
      *
      * @return bool If any of the directories are not writable by the application it will return FALSE otherwise returns TRUE.
      */
-    private function filePerm() {
+    private function areDirectoriesWritable() {
         clearstatcache(); // if we do multiple check operations caching can return false data
-        if (!is_writable("./images/") || !is_writable("./includes/")) {
+        if (!is_writable("./images/") || !is_writable("../includes/")) {
             return FALSE;
         }
         return TRUE;
@@ -230,16 +229,14 @@ class SprdCMSInstall {
      * No salt algorithm is proposed for now and hashing method is left to the current default PHP installation configuration of the crypt function.
      *
      * @return  bool TRUE is returned if the crypted value is written to the database or FALSE if cannot save it.
-     * @todo test for crypt constants in order to use the best hash available on the current PHP installation.
      */
-    private function initPassword() {
-        $sdb = SprdCMSDb::getInstance();
-        $crypted = crypt($_POST['password'], md5($_POST['dbName']));
-        $params = array(
+    private function initializePassword() {
+        $database = SprdCMSDb::getInstance();
+        $cryptedPassword = crypt($_POST['password'], md5($_POST['dbName']));
+        $queryParameters = array(
             ':name' => $_POST['username'],
-            ':password' => $crypted
+            ':password' => $cryptedPassword
         );
-        return $sdb->prepare("INSERT INTO login (`name`,`password`) VALUES (:name, :password)", $params);
+        return $database->prepare("INSERT INTO login (`name`,`password`) VALUES (:name, :password)", $queryParameters);
     }
-
 }
