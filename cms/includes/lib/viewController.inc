@@ -37,10 +37,10 @@ class SprdCMSViewControl {
             } else {
                 throw new Exception("Cannot locate and load HTML template file $view. Template file is either missing or file permission if wrong.");
             }
-        } catch (Exception $exc) {
+        } catch (Exception $e) {
             $log = new Logger();
-            $log->logEvent($exc);
-            echo $exc->getMessage();
+            $log->logEvent($e);
+            echo $e->getMessage();
             exit();
         }
     }
@@ -57,9 +57,9 @@ class SprdCMSViewControl {
             if (!require_once ($this->template)) {
                 throw new Exception("Unable to include and render view $this->template.");
             }
-        } catch (Exception $exc) {
+        } catch (Exception $e) {
             $log = new Logger();
-            $log->logEvent($exc);
+            $log->logEvent($e);
         }
     }
 
