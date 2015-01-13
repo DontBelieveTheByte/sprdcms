@@ -27,7 +27,7 @@ class SprdCMSRewrite {
      * @todo    Add some error checking.
      */
     public function __construct() {
-        $this->config = @file_get_contents('./includes/config.xml');
+        $this->config = @file_get_contents('../includes/config.xml');
     }
 
     /**
@@ -49,7 +49,7 @@ class SprdCMSRewrite {
     public function turnOn() {
         try {
             $new = preg_replace('/(<modrewrite>0<\/modrewrite>)/m', '<modrewrite>1</modrewrite>', (String) $this->config);
-            if (@file_put_contents('./includes/config.xml', $new) !== FALSE) {
+            if (@file_put_contents('../includes/config.xml', $new) !== FALSE) {
                 return TRUE;
             }
             throw new Exception("Cannot turn on Mod Rewrite functionality. Make sure mod_rewrite is enabled.");
@@ -70,7 +70,7 @@ class SprdCMSRewrite {
     public function turnOff() {
         try {
             $new = preg_replace('/(<modrewrite>1<\/modrewrite>)/m', '<modrewrite>0</modrewrite>', (String) $this->config);
-            if (@file_put_contents('./includes/config.xml', $new) !== FALSE) {
+            if (@file_put_contents('../includes/config.xml', $new) !== FALSE) {
                 return TRUE;
             }
             throw new Exception("Problem while turning off Mod Rewrite functionality.");

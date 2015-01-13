@@ -1,5 +1,5 @@
 
-<?php require_once ('./includes/views/storeHeader.tpl'); ?>
+<?php require_once ('../includes/views/storeHeader.tpl'); ?>
 <div class="row">
     <a href='<?php echo $_SERVER['PHP_SELF'] . "?q=article/" . $renderable['article']->id ?>'>
         <h1> <?php echo $renderable['article']->name ?> </h1>
@@ -14,4 +14,4 @@
     <?php
     ?>
 </div>
-<?php require_once ('./includes/views/storeFooter.tpl'); ?>
+<?php require_once ('../includes/views/storeFooter.tpl'); ?>

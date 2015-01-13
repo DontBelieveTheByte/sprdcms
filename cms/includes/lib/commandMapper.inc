@@ -93,7 +93,7 @@ class SprdCMSCommandMapper implements SprdCMSProcessor {
                     break;
                 case "getcsv":
                     require_once '../includes/lib/session.inc';
-                    if (SprdCMSSession::getLoginStatus() && file_exists('./includes/shirtlist.csv')) {
+                    if (SprdCMSSession::getLoginStatus() && file_exists('../includes/shirtlist.csv')) {
                         include '../includes/shirtlist.csv';
                     }
                     break;
@@ -105,7 +105,7 @@ class SprdCMSCommandMapper implements SprdCMSProcessor {
                 case "dbBackup" :
                     require_once '../includes/lib/session.inc';
                     if (SprdCMSSession::getLoginStatus() === TRUE) {
-                        require_once './includes/lib/dbBackup.inc';
+                        require_once '../includes/lib/dbBackup.inc';
                         $backup = new SprdCMSDbBackup();
                         $backup->process();
                     } else {

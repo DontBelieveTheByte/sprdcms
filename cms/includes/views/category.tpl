@@ -1,5 +1,5 @@
 
-<?php require_once ('./includes/views/storeHeader.tpl'); ?>
+<?php require_once ('../includes/views/storeHeader.tpl'); ?>
 <div class="row category">
     <?php
     if (isset($renderable['articles']) && !empty($renderable['articles'])) {
@@ -18,5 +18,5 @@
     ?>
 </div>
 <?php
-require_once ('./includes/views/storeFooter.tpl');
+require_once ('../includes/views/storeFooter.tpl');
 ?>

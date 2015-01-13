@@ -41,7 +41,7 @@ class SprdCMSRequest {
      * @return void
      */
     private function extract() {
-        if (file_exists('./includes/config.xml') && SprdCMSSiteConfig::getConfig()->getRewriteStatus() && isset($_SERVER['REDIRECT_QUERY_STRING']) && !empty($_SERVER['REDIRECT_QUERY_STRING'])) {
+        if (file_exists('../includes/config.xml') && SprdCMSSiteConfig::getConfig()->getRewriteStatus() && isset($_SERVER['REDIRECT_QUERY_STRING']) && !empty($_SERVER['REDIRECT_QUERY_STRING'])) {
             $this->params = explode("/", preg_replace("/^[q][=]/", "", $_SERVER['REDIRECT_QUERY_STRING']));
         } elseif (preg_match("/.+[?q=]/", $_SERVER['REQUEST_URI'])) {
             $this->params = explode("/", preg_replace("/.+[?q=]/", "", $_SERVER['REQUEST_URI']));

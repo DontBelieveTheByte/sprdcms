@@ -5,8 +5,8 @@
  * @copyright (c) 2013, J-F B
  * @author J-F B <ever.livin.never.fearful@gmail.com>
  */
-require_once './includes/lib/itemCSV.inc';
-require_once './includes/lib/itemManual.inc';
+require_once '../includes/lib/itemCSV.inc';
+require_once '../includes/lib/itemManual.inc';
 
 /**
  * This is base class that defines what properties a store items should hold and its common methods.

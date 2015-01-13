@@ -151,7 +151,7 @@
 </span></span><span id="48" class="l"><a class="l" href="#48"> 48: </a><span class="php-comment">     */</span>
 </span><span id="49" class="l"><a class="l" href="#49"> 49: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_process" href="#_process">process</a>(<span class="php-var">$param</span> = <span class="php-keyword1">NULL</span>) {
 </span><span id="50" class="l"><a class="l" href="#50"> 50: </a>        <span class="php-keyword1">try</span> {
-</span><span id="51" class="l"><a class="l" href="#51"> 51: </a>            <span class="php-keyword1">require_once</span> <span class="php-quote">'./includes/Control/sessionControl.inc'</span>;
+</span><span id="51" class="l"><a class="l" href="#51"> 51: </a>            <span class="php-keyword1">require_once</span> <span class="php-quote">'../includes/Control/sessionControl.inc'</span>;
 </span><span id="52" class="l"><a class="l" href="#52"> 52: </a>            <span class="php-keyword1">switch</span> (<span class="php-var">$this</span>-&gt;command) {
 </span><span id="53" class="l"><a class="l" href="#53"> 53: </a>                <span class="php-keyword1">case</span> <span class="php-quote">&quot;activeToggleItem&quot;</span> :
 </span><span id="54" class="l"><a class="l" href="#54"> 54: </a><span class="php-comment">//                case &quot;addShopItemManual&quot; : Not implemented yet</span>
@@ -167,7 +167,7 @@
 </span><span id="64" class="l"><a class="l" href="#64"> 64: </a>                <span class="php-keyword1">case</span> <span class="php-quote">&quot;sortCategories&quot;</span> :
 </span><span id="65" class="l"><a class="l" href="#65"> 65: </a>                <span class="php-keyword1">case</span> <span class="php-quote">&quot;updateItemDesc&quot;</span> :
 </span><span id="66" class="l"><a class="l" href="#66"> 66: </a>                    <span class="php-keyword1">if</span> (SprdCMSSession::getLoginStatus()) {
-</span><span id="67" class="l"><a class="l" href="#67"> 67: </a>                        <span class="php-keyword1">require_once</span> <span class="php-quote">'./includes/Model/backStore.inc'</span>;
+</span><span id="67" class="l"><a class="l" href="#67"> 67: </a>                        <span class="php-keyword1">require_once</span> <span class="php-quote">'../includes/Model/backStore.inc'</span>;
 </span><span id="68" class="l"><a class="l" href="#68"> 68: </a>                        <span class="php-var">$store</span> = <span class="php-keyword1">new</span> SprdCMSBackStore();
 </span><span id="69" class="l"><a class="l" href="#69"> 69: </a>                        <span class="php-keyword1">echo</span> <span class="php-keyword2">json_encode</span>(<span class="php-var">$store</span>-&gt;{<span class="php-var">$this</span>-&gt;command}(<span class="php-var">$this</span>-&gt;storeParam));
 </span><span id="70" class="l"><a class="l" href="#70"> 70: </a>                    } <span class="php-keyword1">else</span> {
@@ -179,7 +179,7 @@
 </span><span id="76" class="l"><a class="l" href="#76"> 76: </a>                        <span class="php-keyword2">header</span>(<span class="php-quote">&quot;HTTP/1.1 500 Internal Server Error&quot;</span>); <span class="php-comment">//Stop against request forgery once installed.</span>
 </span><span id="77" class="l"><a class="l" href="#77"> 77: </a>                        <span class="php-keyword1">break</span>;
 </span><span id="78" class="l"><a class="l" href="#78"> 78: </a>                    }
-</span><span id="79" class="l"><a class="l" href="#79"> 79: </a>                    <span class="php-keyword1">require_once</span> <span class="php-quote">'./includes/Control/install.inc'</span>;
+</span><span id="79" class="l"><a class="l" href="#79"> 79: </a>                    <span class="php-keyword1">require_once</span> <span class="php-quote">'../includes/Control/install.inc'</span>;
 </span><span id="80" class="l"><a class="l" href="#80"> 80: </a>                    <span class="php-var">$installer</span> = <span class="php-keyword1">new</span> SprdCMSInstall();
 </span><span id="81" class="l"><a class="l" href="#81"> 81: </a>                    <span class="php-keyword1">echo</span> <span class="php-keyword2">json_encode</span>(<span class="php-var">$installer</span>-&gt;initStore());
 </span><span id="82" class="l"><a class="l" href="#82"> 82: </a>                    <span class="php-keyword1">break</span>;

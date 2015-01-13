@@ -72,7 +72,7 @@ abstract class SprdCMSStore {
      * @todo    Decouple this method from this class.
      */
     protected function itemThawDb($itemId) {
-        require_once './includes/lib/item.inc';
+        require_once '../includes/lib/item.inc';
         $sql = "SELECT * FROM `articles` WHERE id = :id";
         $this->sdb->prepare($sql, array(":id" => $itemId));
         return $this->sdb->fetch();

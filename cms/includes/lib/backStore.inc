@@ -6,7 +6,7 @@
  * @copyright (c) 2013, J-F B
  * @author J-F B <ever.livin.never.fearful@gmail.com>
  */
-require_once './includes/lib/store.inc';
+require_once '../includes/lib/store.inc';
 
 /**
  * Class is responsible for administering the SprdCMS backend.
@@ -67,7 +67,7 @@ class SprdCMSBackStore extends SprdCMSStore {
      */
     public function addShopItemCSV($item) {
         try {
-            require_once './includes/lib/item.inc';
+            require_once '../includes/lib/item.inc';
             $newItem = SprdCMSItem::SprdCMSitemCSVFactory($item);
             if ($newItem->getImages() === TRUE && $newItem->itemFreezeDb() === TRUE) {
                 $bindings = array(':article_id' => $newItem->getId());
