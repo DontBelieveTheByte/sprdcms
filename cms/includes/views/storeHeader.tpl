@@ -21,7 +21,7 @@
                 frameBorder:0;
                 margin-top: 20px;
                 margin-bottom: 30px;
-                /*width: 700px; height and width must match your spreadshirt template*/
+                /*width: 700px; height and width must match your Spreadshirt template*/
                 height: 1800px;
             }
             .category {
@@ -60,7 +60,7 @@
             <div class="row">
                 <span class="pull-right">
                     <h3>
-                        <a target='_blank' href='https://<?php echo $renderable['shopId']; ?>.spreadshirt.<?php echo $renderable['shopDomain'] ?>/shop/basket'>Checkout
+                        <a target='_blank' href='https://<?php echo $renderable['shopId']; ?>.Spreadshirt.<?php echo $renderable['shopDomain'] ?>/shop/basket'>Checkout
                             <i class="icon-shopping-cart"></i>
                         </a>
                     </h3>

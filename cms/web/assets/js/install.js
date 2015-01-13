@@ -212,7 +212,7 @@ $(document).ready(function() {
                 };
                 return 'Shop name : <b>' + $("#shopName").val() + '</b><br />' +
                         'Shop ID : <b>' + $("#shopId").val() + '</b><br />' +
-                        'Domain : spreadshirt<b>.' + $("input[name='domain']:checked").val() + '</b><br />' +
+                        'Domain : Spreadshirt<b>.' + $("input[name='domain']:checked").val() + '</b><br />' +
                         'Username : <b>' + $("#username").val() + '</b><br />' +
                         'Password : <b>' + passMask($("#password").val().length) + '</b><br />' +
                         'Email : <b>' + $("#email").val() + '</b><br />' +

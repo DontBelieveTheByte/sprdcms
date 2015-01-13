@@ -7,13 +7,13 @@
  */
 
 /**
- * This class create instances of a valid store articles build from manual input of a unique spreadshirt article ID.
+ * This class create instances of a valid store articles build from manual input of a unique Spreadshirt article ID.
  *
  * This class hold an instance of a valid item build from manual input. It is not fully implemented yet and should not be used.
  *
  * @see SprdCMSItem
  * @package   SprdCMS
- * @todo This class is not implemented yet, it will be when the full integration with the spreadshirt REST API is added.
+ * @todo This class is not implemented yet, it will be when the full integration with the Spreadshirt REST API is added.
  */
 class SprdCMSItemManual Extends SprdCMSItem {
 //    protected $config, $xml;
@@ -46,21 +46,21 @@ class SprdCMSItemManual Extends SprdCMSItem {
      */
     private function getXml() { //needs more error checking
         try {
-            $this->xml = @simplexml_load_file('http://api.spreadshirt.' . $this->shopDomain . '/api/v1/shops/' . $this->shopId . '/articles/' . (string) $this->item);
+            $this->xml = @simplexml_load_file('http://api.Spreadshirt.' . $this->shopDomain . '/api/v1/shops/' . $this->shopId . '/articles/' . (string) $this->item);
         } catch (Exception $e) {
             echo ("Could not query Spreadshirt API Service<br>" . "$e->getMessage()");
         }
     }
 
     /**
-     * Get images using the spreadshirt API
+     * Get images using the Spreadshirt API
      *
      * @todo Implement the method correctly.
      */
     public function getImages() {
 //        $this->img = array(
-//            "http://image.spreadshirt." . $this->shopDomain . "/image-server/v1/products/" . $this->xml->product['id'] . "/views/1,width=300,height=300.png",
-//            "http://image.spreadshirt." . $this->shopDomain . "/image-server/v1/compositions/" . $this->xml->product['id'] . "/views/1,width=300,height=300.png"
+//            "http://image.Spreadshirt." . $this->shopDomain . "/image-server/v1/products/" . $this->xml->product['id'] . "/views/1,width=300,height=300.png",
+//            "http://image.Spreadshirt." . $this->shopDomain . "/image-server/v1/compositions/" . $this->xml->product['id'] . "/views/1,width=300,height=300.png"
 //        );
 //        try {
 //            foreach ($this->img as $key => $imgLink) {

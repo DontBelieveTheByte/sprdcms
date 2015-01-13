@@ -1,6 +1,6 @@
 #SprdCMS
 
-Content management for your [Spreadshirt](http://www.spreadshirt.com/) shop.
+Content management for your [Spreadshirt](http://www.Spreadshirt.com/) shop.
 
 Copyright (c) J-F B 2013
 
@@ -58,10 +58,10 @@ Published under the GPLv3 license.
 3. Fill out the installer form.You will need information about your Spreadshirt account :
     - Your shop name.
     - Your shop ID.
-    - Your shop domain. Did you register with spreadshirt.com or spreadshirt.net?
+    - Your shop domain. Did you register with Spreadshirt.com or Spreadshirt.net?
 4. Start administering your store.
     - Create categories
-    - Add items to your store by using a CSV file from you spreadshirt account.
+    - Add items to your store by using a CSV file from you Spreadshirt account.
 5. Customize
     - Backup the existing templates
     - Customize your template.
@@ -80,5 +80,5 @@ Published under the GPLv3 license.
 - Caching to improve performance.
 - Integration with Google analytics.
 - Infinite scroll for stores with a large number of items.
-- A shopping cart with full integration of the spreadshirt API.
+- A shopping cart with full integration of the Spreadshirt API.
 - Various fixes.

@@ -53,9 +53,9 @@ class SprdCMSFrontController implements SprdCMSProcessor {
      * @return void
      */
     public function process($param = NULL) {
-        $checkGet = $this->request->getParams();
+        $checkGet = $this->request->getParameters();
         if (!empty($checkGet[0])) {
-            $this->mapper->process($this->request->getParams());
+            $this->mapper->process($this->request->getParameters());
         } else {
             $this->mapper->process(array("category", "Home"));
         }

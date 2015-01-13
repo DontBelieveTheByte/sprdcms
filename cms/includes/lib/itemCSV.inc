@@ -38,10 +38,10 @@ class SprdCMSItemCSV extends SprdCMSItem {
     public function __construct(Array $item) {
         parent::__construct();
         $this->config = SprdCMSSiteConfig::getConfig();
-        $this->id = $item[0];
-        $this->pid = $item[1];
+        $this->spreadShirtId = $item[0];
+        $this->spreadShirtProductId = $item[1];
         $this->name = $item[2];
-        $this->desc = $item[3];
+        $this->description = $item[3];
         $this->color = $item[6];
         $this->price = $item[7];
         $this->url = $item[10];
@@ -49,7 +49,7 @@ class SprdCMSItemCSV extends SprdCMSItem {
 
     /**
      * This method reflects the idiosyncratic way to obtan an image from CSV input.
-     * Instead of keeping a reference URLs to the images on spreadshirt servers, we cache them onto the site servers.
+     * Instead of keeping a reference URLs to the images on Spreadshirt servers, we cache them onto the site servers.
      * This is better for two reasons:
      * 1. Faster access that can also be offloaded to a CDN.
      * 2. Images file names have semantic meaning which is better for humans and search engine indexation.
@@ -61,17 +61,17 @@ class SprdCMSItemCSV extends SprdCMSItem {
     public function getImages() {
         try {
             $images = array(
-                "http://image.spreadshirt." . $this->config->getDomain() . "/image-server/v1/products/" . $this->pid . "/views/1,width=300,height=300.png",
-                "http://image.spreadshirt." . $this->config->getDomain() . "/image-server/v1/compositions/" . $this->pid . "/views/1,width=300,height=300.png"
+                "http://image.Spreadshirt." . $this->config->getDomain() . "/image-server/v1/products/" . $this->spreadShirtProductId . "/views/1,width=300,height=300.png",
+                "http://image.Spreadshirt." . $this->config->getDomain() . "/image-server/v1/compositions/" . $this->spreadShirtProductId . "/views/1,width=300,height=300.png"
             );
             foreach ($images as $key => $image) {
                 $content = @file_get_contents($image);
                 if ($content !== FALSE) {
-                    $filename = preg_replace("/(\W+|\s+ )/", '-', $this->name) . $this->id . "-$key.png"; //subtitutes whitespaces for '-'
+                    $filename = preg_replace("/(\W+|\s+ )/", '-', $this->name) . $this->spreadShirtId . "-$key.png"; //subtitutes whitespaces for '-'
                     if (@file_put_contents("images/$filename", $content) !== FALSE) {
                         $this->{"img" . $key} = ($filename); //this sets the objects image field after file is written to disk
                     } else {
-                        throw new Exception("Unable to write image file " . $filename . " to disk for article " . $this->id);
+                        throw new Exception("Unable to write image file " . $filename . " to disk for article " . $this->spreadShirtId);
                     }
                 } else {
                     throw new Exception("Unable to get image files from Spreadshirt");

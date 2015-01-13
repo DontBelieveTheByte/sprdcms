@@ -50,7 +50,7 @@ class SprdCMSBackStore extends SprdCMSStore {
      *
      * @see SprdCMSItemManual
      * @param string $item The unique item ID of the new item.
-     * @todo Implement the method when spreadshirt API is added.
+     * @todo Implement the method when Spreadshirt API is added.
      */
     public function addShopItemManual($item) { // not implimented in lite version
         //TODO

@@ -152,7 +152,7 @@
 </span><span id="49" class="l"><a class="l" href="#49">49: </a>
 </span><span id="50" class="l"><a class="l" href="#50">50: </a>    <span class="php-comment">/**
 </span></span><span id="51" class="l"><a class="l" href="#51">51: </a><span class="php-comment">     * This method reflects the idiosyncratic way to obtan an image from CSV input.
-</span></span><span id="52" class="l"><a class="l" href="#52">52: </a><span class="php-comment">     * Instead of keeping a reference URLs to the images on spreadshirt servers, we cache them onto the site servers.
+</span></span><span id="52" class="l"><a class="l" href="#52">52: </a><span class="php-comment">     * Instead of keeping a reference URLs to the images on Spreadshirt servers, we cache them onto the site servers.
 </span></span><span id="53" class="l"><a class="l" href="#53">53: </a><span class="php-comment">     * This is better for two reasons:
 </span></span><span id="54" class="l"><a class="l" href="#54">54: </a><span class="php-comment">     * 1. Faster access that can also be offloaded to a CDN.
 </span></span><span id="55" class="l"><a class="l" href="#55">55: </a><span class="php-comment">     * 2. Images file names have semantic meaning which is better for humans and search engine indexation.
@@ -164,8 +164,8 @@
 </span><span id="61" class="l"><a class="l" href="#61">61: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getImages" href="#_getImages">getImages</a>() {
 </span><span id="62" class="l"><a class="l" href="#62">62: </a>        <span class="php-keyword1">try</span> {
 </span><span id="63" class="l"><a class="l" href="#63">63: </a>            <span class="php-var">$images</span> = <span class="php-keyword1">array</span>(
-</span><span id="64" class="l"><a class="l" href="#64">64: </a>                <span class="php-quote">&quot;http://image.spreadshirt.&quot;</span> . <span class="php-var">$this</span>-&gt;config-&gt;getDomain() . <span class="php-quote">&quot;/image-server/v1/products/&quot;</span> . <span class="php-var">$this</span>-&gt;pid . <span class="php-quote">&quot;/views/1,width=300,height=300.png&quot;</span>,
-</span><span id="65" class="l"><a class="l" href="#65">65: </a>                <span class="php-quote">&quot;http://image.spreadshirt.&quot;</span> . <span class="php-var">$this</span>-&gt;config-&gt;getDomain() . <span class="php-quote">&quot;/image-server/v1/compositions/&quot;</span> . <span class="php-var">$this</span>-&gt;pid . <span class="php-quote">&quot;/views/1,width=300,height=300.png&quot;</span>
+</span><span id="64" class="l"><a class="l" href="#64">64: </a>                <span class="php-quote">&quot;http://image.Spreadshirt.&quot;</span> . <span class="php-var">$this</span>-&gt;config-&gt;getDomain() . <span class="php-quote">&quot;/image-server/v1/products/&quot;</span> . <span class="php-var">$this</span>-&gt;pid . <span class="php-quote">&quot;/views/1,width=300,height=300.png&quot;</span>,
+</span><span id="65" class="l"><a class="l" href="#65">65: </a>                <span class="php-quote">&quot;http://image.Spreadshirt.&quot;</span> . <span class="php-var">$this</span>-&gt;config-&gt;getDomain() . <span class="php-quote">&quot;/image-server/v1/compositions/&quot;</span> . <span class="php-var">$this</span>-&gt;pid . <span class="php-quote">&quot;/views/1,width=300,height=300.png&quot;</span>
 </span><span id="66" class="l"><a class="l" href="#66">66: </a>            );
 </span><span id="67" class="l"><a class="l" href="#67">67: </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$images</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$image</span>) {
 </span><span id="68" class="l"><a class="l" href="#68">68: </a>                <span class="php-var">$content</span> = @<span class="php-keyword2">file_get_contents</span>(<span class="php-var">$image</span>);
@@ -177,7 +177,7 @@
 </span><span id="74" class="l"><a class="l" href="#74">74: </a>                        <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> Exception(<span class="php-quote">&quot;Unable to write image file &quot;</span> . <span class="php-var">$filename</span> . <span class="php-quote">&quot; to disk for article &quot;</span> . <span class="php-var">$this</span>-&gt;id);
 </span><span id="75" class="l"><a class="l" href="#75">75: </a>                    }
 </span><span id="76" class="l"><a class="l" href="#76">76: </a>                } <span class="php-keyword1">else</span> {
-</span><span id="77" class="l"><a class="l" href="#77">77: </a>                    <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> Exception(<span class="php-quote">&quot;Unable to get image files from spreadshirt&quot;</span>);
+</span><span id="77" class="l"><a class="l" href="#77">77: </a>                    <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> Exception(<span class="php-quote">&quot;Unable to get image files from Spreadshirt&quot;</span>);
 </span><span id="78" class="l"><a class="l" href="#78">78: </a>                }
 </span><span id="79" class="l"><a class="l" href="#79">79: </a>            }
 </span><span id="80" class="l"><a class="l" href="#80">80: </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">TRUE</span>;

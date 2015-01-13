@@ -67,7 +67,7 @@ abstract class SprdCMSStore {
     /**
      * Unfreeze an article from the database and inject it's values into a standard object.
      *
-     * @param string A string representing the unique ID of a spreadshirt article.
+     * @param string A string representing the unique ID of a Spreadshirt article.
      * @return stdClass|false Will return a standard class object representing article data or FALSE from the SprdCMSDb::fetch method.
      * @todo    Decouple this method from this class.
      */

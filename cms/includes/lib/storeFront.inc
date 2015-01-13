@@ -42,7 +42,7 @@ class SprdCMSStoreFront extends SprdCMSStore {
     /**
      * Methos that is used to get a renderable array in a single store article context.
      *
-     * @param string $article The unique ID of an article as given by spreadshirt.
+     * @param string $article The unique ID of an article as given by Spreadshirt.
      * @return mixed Returns an associative array or boolean FALSE if the method can't find an article matching the $article parameter.
      * @throws  Exception Failed attempt to load an article (probably because it doesn't exist) will be logged along with the ID of that article and return false.
      */
