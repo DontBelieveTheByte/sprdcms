@@ -19,12 +19,12 @@ require_once '../includes/lib/logger.inc';
 try {
     $controller = new SprdCMSFrontController(
         new SprdCMSRequest(),
-        new SprdCMSCommandMapper(new SprdCMSViewControl())
+        new SprdCMSCommandMapper(new SprdCMSViewController())
     );
     $controller->process();
-} catch (Exception $exc) { //Catch any uncaught exception.
+} catch (Exception $e) { //Catch any uncaught exception.
     $log = new SprdCMSLogger();
-    $log->logEvent($exc);
+    $log->logEvent($e);
     echo 'Top level application error.';
     exit();
 }
