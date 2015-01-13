@@ -233,4 +233,3 @@ abstract class SprdCMSItem {
 
 }
 
-?>

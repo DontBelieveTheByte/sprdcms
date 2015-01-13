@@ -80,4 +80,3 @@ abstract class SprdCMSStore {
 
 }
 
-?>

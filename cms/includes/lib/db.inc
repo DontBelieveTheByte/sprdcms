@@ -171,4 +171,3 @@ Class SprdCMSDb {
 
 }
 
-?>

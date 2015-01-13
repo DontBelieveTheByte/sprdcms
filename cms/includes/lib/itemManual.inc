@@ -76,4 +76,3 @@ class SprdCMSItemManual Extends SprdCMSItem {
 
 }
 
-?>

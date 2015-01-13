@@ -108,5 +108,3 @@ class SprdCMSAjaxController implements SprdCMSProcessor {
     }
 
 }
-
-?>

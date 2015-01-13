@@ -119,4 +119,3 @@ class SprdCMSStoreFront extends SprdCMSStore {
 
 }
 
-?>

@@ -24,4 +24,3 @@ interface SprdCMSProcessor {
     public function process($param = NULL);
 }
 
-?>

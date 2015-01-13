@@ -38,5 +38,3 @@ class SprdCMSCache implements SprdCMSProcessor {
     }
 
 }
-
-?>
