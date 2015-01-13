@@ -25,4 +25,4 @@ try {
     echo 'Top level application error.';
     exit();
 }
-?>
+
