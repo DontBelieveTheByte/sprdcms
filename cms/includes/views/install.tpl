@@ -4,17 +4,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SprdCMS Installation</title>
-        <link rel="shortcut icon" href="misc/favicon.png">
-        <link rel="icon" href="misc/favicon.png">
-        <link rel="stylesheet" type="text/css" href="misc/css/cssreset-min.css" />
-        <link rel="stylesheet" href="misc/jquery-ui-1.10.2.custom/css/custom-theme/jquery-ui-1.10.2.custom.min.css" type="text/css" />
-        <link rel="stylesheet" href="misc/css/admin.css" type="text/css" />
-        <script src="misc/js/jquery-1.9.1.min.js"></script>
-        <script src="misc/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>
-        <script src="misc/js/jquery.validate.min.js"></script>
-        <script src="misc/js/install.js"></script>
-        <script src="misc/js/ajaxerr.js"></script>
-        <script src="misc/js/turtle.js"></script>
+        <link rel="shortcut icon" href="/assets/favicon.png">
+        <link rel="icon" href="/assets/favicon.png">
+        <link rel="stylesheet" type="text/css" href="/assets/css/cssreset-min.css" />
+        <link rel="stylesheet" href="/assets/jquery-ui-1.10.2.custom/css/custom-theme/jquery-ui-1.10.2.custom.min.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/admin.css" type="text/css" />
+        <script src="/assets/js/jquery-1.9.1.min.js"></script>
+        <script src="/assets/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>
+        <script src="/assets/js/jquery.validate.min.js"></script>
+        <script src="/assets/js/install.js"></script>
+        <script src="/assets/js/ajaxerr.js"></script>
+        <script src="/assets/js/turtle.js"></script>
     </head>
     <body>
         <div id="initContainer">
@@ -46,7 +46,7 @@
                 </form>
             </div>
             <div class="cmslogo">
-                <object  data="misc/cms_logo.svg" type="image/svg+xml"></object>
+                <object  data="/assets/cms_logo.svg" type="image/svg+xml"></object>
                 <ol style="list-style: upper-roman" >
                     <li class="initList" >Create a MySQL database.</li>
                     <li class="initList" >Fill out this form with your information and complete the installation.</li>
