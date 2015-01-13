@@ -29,7 +29,7 @@ class SprdCMSInstall {
                 throw new Exception("Invalid form input. Server side validation fail.");
             }
             if ($this->filePerm() !== TRUE) {
-                throw new Exception("Install failed on file permission. Make sure images and includes directory are both writable by the webserver.");
+                throw new Exception("Install failed on file permission. Make sure images and includes directory are both writable by the web server.");
             } elseif ($this->initXmlConfig() !== TRUE) {
                 throw new Exception("Install failed on initializing XML config.");
             } elseif ($this->initDb() !== TRUE) {
