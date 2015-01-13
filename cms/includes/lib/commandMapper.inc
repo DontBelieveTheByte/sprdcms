@@ -17,44 +17,43 @@ class SprdCMSCommandMapper implements SprdCMSProcessor {
 
     /**
      * Holds a reference to an instance of SprdCMSViewControl.
-     * @var SprdCMSViewControl
+     * @var SprdCMSViewController
      */
-    protected $viewControl;
+    protected $viewController;
 
     /**
      * Holds commands and command parameters.
      * @var array
      */
-    protected $params;
+    protected $parameters;
 
     /**
      * Accepts an instance of SprdCMSViewControl and assigns an internal reference to it.
      *
      * @param  SprdCMSViewControl A View controller. Needed to handled loading and rendering.
      * @see SprdCMSViewControl
-     * @return  void
      */
-    public function __construct(SprdCMSViewControl $viewControl) {
-        $this->viewControl = $viewControl;
+    public function __construct(SprdCMSViewController $viewControl) {
+        $this->viewController = $viewControl;
     }
 
     /**
-     * An numericall indexed array is needed as input. The first index is the command to execute and subsequent indexes are parameters.
-     * Commands are whitelisted using a switch block that validates known commands, so any other unkown command is rejected.
+     * An numerical indexed array is needed as input. The first index is the command to execute and subsequent indexes are parameters.
+     * Commands are white listed using a switch block that validates known commands, so any other unknown command is rejected.
      * Implements the SprdCMSProcessor interface, can also delegate requests to other SprdCMSProcessor objects.
      *
      * @see SprdCMSProcessor
-     * @param array $params parameters are passed via the front controller's comming from a SprdCMSRequest object. The first array index is must be a whitelisted command or is rejected.
+     * @param array $params parameters are passed via the front controller's coming from a SprdCMSRequest object. The first array index is must be a whitelisted command or is rejected.
      * @see SprdCMSRequest
      */
     public function process($params = NULL) {
         try {
-            $this->params = $params;
-            switch ($this->params[0]) {
+            $this->parameters = $params;
+            switch ($this->parameters[0]) {
                 case "install" :
                     if (!file_exists("./includes/config.xml")) {
-                        $this->viewControl->loadView("install");
-                        $this->viewControl->render();
+                        $this->viewController->loadView("install");
+                        $this->viewController->render();
                         break;
                     }
                     $this->process("login"); //Recursive call to login as fallback.
@@ -63,12 +62,12 @@ class SprdCMSCommandMapper implements SprdCMSProcessor {
                 case "category":
                     require_once '../includes/lib/storeFront.inc';
                     $store = new SprdCMSStoreFront();
-                    $renderable = ($this->params[0] === "article") ? $store->getArticle($this->params[1]) : $store->getCategory($this->params[1]);
+                    $renderable = ($this->parameters[0] === "article") ? $store->getArticle($this->parameters[1]) : $store->getCategory($this->parameters[1]);
                     if (!$renderable) {//in case article or category doesn't exist.
                         header("Location: index.php"); //Redirect to homepage
                     } else {
-                        $this->viewControl->loadView($this->params[0]);
-                        $this->viewControl->render($renderable);
+                        $this->viewController->loadView($this->parameters[0]);
+                        $this->viewController->render($renderable);
                     }
                     break;
                 case "logout":
@@ -82,14 +81,14 @@ class SprdCMSCommandMapper implements SprdCMSProcessor {
                         SprdCMSSession::adminLogin($_POST["username"], $_POST['password']);
                     }
                     $view = SprdCMSSession::getLoginStatus() ? "admin" : "login";
-                    $this->viewControl->loadView($view);
-                    $this->viewControl->render();
+                    $this->viewController->loadView($view);
+                    $this->viewController->render();
                     break;
                 case "admin" :
                     require_once '../includes/lib/session.inc';
                     $view = SprdCMSSession::getLoginStatus() ? "admin" : "login";
-                    $this->viewControl->loadView($view);
-                    $this->viewControl->render();
+                    $this->viewController->loadView($view);
+                    $this->viewController->render();
                     break;
                 case "getcsv":
                     require_once '../includes/lib/session.inc';
@@ -116,12 +115,12 @@ class SprdCMSCommandMapper implements SprdCMSProcessor {
                     echo json_encode(TRUE);
                     break;
                 default:
-                    throw new Exception("Invalid GET parameter " . $this->params[0] . " request by " . $_SERVER['REMOTE_ADDR']); //catch exception somewhere later
+                    throw new Exception("Invalid GET parameter " . $this->parameters[0] . " request by " . $_SERVER['REMOTE_ADDR']); //catch exception somewhere later
                     break;
             }
-        } catch (Exception $exc) {
+        } catch (Exception $e) {
             $log = new SprdCMSLogger();
-            $log->logEvent($exc);
+            $log->logEvent($e);
             header('HTTP/1.0 404 Not Found');
             echo "<h1>404 Not Found</h1>";
             echo "<p>The page that you have requested could not be found.</p>";

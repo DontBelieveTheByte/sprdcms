@@ -15,7 +15,7 @@
  *
  * @package   SprdCMS
  */
-class SprdCMSViewControl {
+class SprdCMSViewController {
 
     /**
      * This holds the full path along with the filename of the template view that needs to be loaded.
