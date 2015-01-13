@@ -63,13 +63,12 @@ class SprdCMSDbBackup implements SprdCMSProcessor {
             } else {
                 throw new Exception("Unable to backup SQL database.");
             }
-        } catch (Exception $exc) {
+        } catch (Exception $e) {
             $log = new SprdCMSLogger();
-            $log->logEvent($exp);
+            $log->logEvent($e);
             exit();
         }
     }
 
 }
 
-?>
