@@ -23,7 +23,6 @@ class SprdCMSURLRewrite {
     /**
      * The constructor loads the configuration file as text, not as XML.
      *
-     * @return  void
      * @todo    Add some error checking.
      */
     public function __construct() {
@@ -41,21 +40,21 @@ class SprdCMSURLRewrite {
 
     /**
      * Turn on URL rewriting to work with Mod Rewrite.
-     * Since the structure of the document doesn't change,
+     * Since the structure of the document does not change,
      * we use a regular expression to modify the configuration file.
      *
      * @return bool Returns TRUE or FALSE on success or failure to change the configuration file.
      */
     public function turnOn() {
         try {
-            $new = preg_replace('/(<modrewrite>0<\/modrewrite>)/m', '<modrewrite>1</modrewrite>', (String) $this->config);
-            if (@file_put_contents('../includes/config.xml', $new) !== FALSE) {
+            $isURLRewriteOn = preg_replace('/(<modrewrite>0<\/modrewrite>)/m', '<modrewrite>1</modrewrite>', (String) $this->config);
+            if (@file_put_contents('../includes/config.xml', $isURLRewriteOn) !== FALSE) {
                 return TRUE;
             }
             throw new Exception("Cannot turn on Mod Rewrite functionality. Make sure mod_rewrite is enabled.");
-        } catch (Exception $exc) {
-            $log = new SprdCMSLogger();
-            $log->logEvent($exc);
+        } catch (Exception $e) {
+            $logger = new SprdCMSLogger();
+            $logger->logEvent($e);
             return FALSE;
         }
     }
@@ -69,14 +68,14 @@ class SprdCMSURLRewrite {
      */
     public function turnOff() {
         try {
-            $new = preg_replace('/(<modrewrite>1<\/modrewrite>)/m', '<modrewrite>0</modrewrite>', (String) $this->config);
-            if (@file_put_contents('../includes/config.xml', $new) !== FALSE) {
+            $isURLRewriteOn = preg_replace('/(<modrewrite>1<\/modrewrite>)/m', '<modrewrite>0</modrewrite>', (String) $this->config);
+            if (@file_put_contents('../includes/config.xml', $isURLRewriteOn) !== FALSE) {
                 return TRUE;
             }
             throw new Exception("Problem while turning off Mod Rewrite functionality.");
-        } catch (Exception $exc) {
+        } catch (Exception $e) {
             $log = new SprdCMSLogger();
-            $log->logEvent($exc);
+            $log->logEvent($e);
             return FALSE;
         }
     }
