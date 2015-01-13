@@ -17,7 +17,10 @@ require_once './includes/lib/siteConfig.inc';
 require_once './includes/lib/db.inc';
 require_once './includes/lib/logger.inc';
 try {
-    $controller = new SprdCMSFrontController(new SprdCMSRequest(), new SprdCMSCommandMapper(new SprdCMSViewControl()));
+    $controller = new SprdCMSFrontController(
+        new SprdCMSRequest(),
+        new SprdCMSCommandMapper(new SprdCMSViewControl())
+    );
     $controller->process();
 } catch (Exception $exc) { //Catch any uncaught exception.
     $log = new SprdCMSLogger();
