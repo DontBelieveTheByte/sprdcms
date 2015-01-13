@@ -11,7 +11,7 @@
  *
  * @package   SprdCMS
  */
-class SprdCMSRewrite {
+class SprdCMSURLRewrite {
 
     /**
      * This property holds the textual content of a configuration file.

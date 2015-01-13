@@ -88,7 +88,7 @@ class SprdCMSAjaxController implements SprdCMSProcessor {
                     break;
                 case "cleanURLs":
                     if (SprdCMSSession::getLoginStatus()) {
-                        $rewrite = new SprdCMSRewrite();
+                        $rewrite = new SprdCMSURLRewrite();
                         echo json_encode($rewrite->{$this->storeParam}());
                     } else {
                         throw new Exception("Unauthorized Ajax request $this->command by IP " . $_SERVER['REMOTE_ADDR']);
