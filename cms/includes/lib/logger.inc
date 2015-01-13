@@ -22,28 +22,28 @@ class SprdCMSLogger {
      * @see SprdCMSDb
      * @var SprdCMSDb
      */
-    protected $sdb;
+    protected $database;
 
     /**
      * The constructor is only there to fill $sdb instance variable with a reference to a singleton database handle.
      */
     public function __construct() {
-        $this->sdb = SprdCMSDb::getInstance();
+        $this->database = SprdCMSDb::getInstance();
     }
 
     /**
      * This method takes an exception and logs its message to the `logs` table.
      *
-     * @param Exception $exp We pass an exception and internally we call the Exception::getMessage to write a descriptive string of the exception event to the database.
+     * @param Exception $e We pass an exception and internally we call the Exception::getMessage to write a descriptive string of the exception event to the database.
      * @return void
      */
-    public function logEvent(Exception $exp) {
+    public function logEvent(Exception $e) {
         $sql = "INSERT INTO `logs` (`type`, `message`) VALUES (:type, :message)";
         $bindings = array(
-            ":type" => get_class($exp),
-            ":message" => $exp->getMessage()
+            ":type" => get_class($e),
+            ":message" => $e->getMessage()
         );
-        $this->sdb->prepare($sql, $bindings);
+        $this->database->prepare($sql, $bindings);
     }
 
     /**
@@ -52,8 +52,8 @@ class SprdCMSLogger {
      * @return array|bool Returns an array of stdClass object reflecting logged Exceptions inside the `logs` table with latest logs at the beginning. If nothing is found it simply returns FALSE.
      */
     public function getLog() {
-        $sql = ("SELECT * FROM `logs` ORDER BY `time` DESC");
-        return $this->sdb->prepare($sql) ? $this->sdb->fetchAll() : FALSE;
+        $query = ("SELECT * FROM `logs` ORDER BY `time` DESC");
+        return $this->database->prepare($query) ? $this->database->fetchAll() : FALSE;
     }
 
     /**
@@ -63,7 +63,7 @@ class SprdCMSLogger {
      */
     public function clearLog() {
         $sql = ("DELETE FROM `logs`");
-        return $this->sdb->prepare($sql);
+        return $this->database->prepare($sql);
     }
 
 }
