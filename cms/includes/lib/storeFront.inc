@@ -20,13 +20,12 @@ class SprdCMSStoreFront extends SprdCMSStore {
      * An associative array with each keys representing an element the view will later need to render.
      * @var array
      */
-    private $renderable = array(); //Can't use [] for implicit array declaration below PHP 5.3
+    private $renderable = [];
 
     /**
      * Construct the parent first and assign keys and values that are common to all request.
      * Most of the values are obtained from the central configuration except the list of categories.
      *
-     * @return void
      */
 
     public function __construct() {
@@ -40,7 +39,7 @@ class SprdCMSStoreFront extends SprdCMSStore {
     }
 
     /**
-     * Methos that is used to get a renderable array in a single store article context.
+     * Get an array in a single store article context.
      *
      * @param string $article The unique ID of an article as given by Spreadshirt.
      * @return mixed Returns an associative array or boolean FALSE if the method can't find an article matching the $article parameter.
@@ -50,13 +49,13 @@ class SprdCMSStoreFront extends SprdCMSStore {
         try {
             $this->renderable['article'] = $this->itemThawDb($article);
             if (!$this->renderable['article']) {
-                throw new Exception("The resquested article '$article' doesn't seem to exist.");
+                throw new Exception("The requested article '$article' doesn't seem to exist.");
             }
             $this->renderable['name'] = $this->renderable['article']->name;
             return $this->renderable;
-        } catch (Exception $exc) {
+        } catch (Exception $e) {
             $log = new SprdCMSLogger();
-            $log->logEvent($exc);
+            $log->logEvent($e);
             return FALSE;
         }
     }
@@ -80,11 +79,11 @@ class SprdCMSStoreFront extends SprdCMSStore {
             $itemList = $this->getSeries($category); //unserialize the requested category into an array
             if ($itemList) {
                 foreach ($itemList as $itemId) {
-                    $sql = "SELECT articles.*, categories.$category FROM `articles` INNER JOIN  `categories` ON articles.id = categories.article_id  WHERE id = :item_id";
+                    $query = "SELECT articles.*, categories.$category FROM `articles` INNER JOIN  `categories` ON articles.id = categories.article_id  WHERE id = :item_id";
                     $bindings = array(
                         ':item_id' => $itemId
                     );
-                    $this->sdb->prepare($sql, $bindings);
+                    $this->sdb->prepare($query, $bindings);
                     $result = $this->sdb->fetch();
                     if ($result->{$category} === "1") {
                         $this->renderable['articles'][] = $result;
@@ -92,9 +91,9 @@ class SprdCMSStoreFront extends SprdCMSStore {
                 }
             }
             return $this->renderable;
-        } catch (Exception $exc) {
+        } catch (Exception $e) {
             $log = new SprdCMSLogger();
-            $log->logEvent($exc);
+            $log->logEvent($e);
             return FALSE;
         }
     }
@@ -107,11 +106,11 @@ class SprdCMSStoreFront extends SprdCMSStore {
      * @return array An associative array of all categories present inside the store.
      */
     public function getCategories() {
-        $tmpList = parent::getCategories();
-        if (!empty($tmpList)) {
-            $sort = array_reverse($tmpList);
-            $sort["Home"] = "Home";
-            return array_reverse($sort);
+        $categoryItems = parent::getCategories();
+        if (!empty($categoryItems)) {
+            $categoryItems = array_reverse($categoryItems);
+            $categoryItems["Home"] = "Home";
+            return array_reverse($categoryItems);
         } else {
             return array("Home" => "Home");
         }
